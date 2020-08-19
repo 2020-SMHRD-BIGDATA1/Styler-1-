@@ -1,13 +1,27 @@
+<%@page import= "com.model.MemberDAO" %>
+<%@page import= "com.model.MemberDTO" %>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="assets/js/jquery.min.js"></script>
 		<title>Right Sidebar - Strongly Typed by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"/>
+		<style>
+		#main{
+				font-family: 'Jeju Gothic';
+				}
+		</style>
+
 	</head>
+		<%
+			MemberDTO info = (MemberDTO)session.getAttribute("info");
+		%>
 	<body class="right-sidebar is-preload">
 		<div id="page-wrapper">
 
@@ -17,8 +31,15 @@
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
-							<p>What is your makeup for today?</p>
-
+							
+							<p>
+							<% if(info == null){ %>
+										<h2>What is your makeup for today?</h2>
+							<%}else{  %>
+										<h2>Good day<%= info.getName() %>!!! let's decide your makeup for today.</h2>
+							<%} %>
+							</p> 
+							
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
@@ -43,72 +64,46 @@
 									<!-- Post -->
 										<article class="box post">
 											<header>
-												<h2>Behold! This is the <strong>right sidebar</strong> layout<br />
-												with a sidebar on the right!</h2>
+												<h2> 내 파우치 속 <strong> 화장품들 </strong> 키워드와<br />
+												유통기한 모두 똑똑하게 관리하자! </h2>
 											</header>
+											
 											<span class="image featured"><img src="images/pic04.jpg" alt="" /></span>
-											<h3>Right is also not left</h3>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
-											Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
-											vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
-											magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
-											tristique at erat. Curabitur leo nibh, rutrum eu malesuada in, tristique
-											at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
-											tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
-											magna tempus</p>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<h3>Accumsan lorem ipsum veroeros</h3>
-											<p>Consequat Phasellus laoreet massa id in, tristique at erat lorem
-											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna.</p>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<h3>Ligula suspcipit fusce veroeros</h3>
-											<p>Nullam dolore etiam sed massa id in, tristique at erat lorem
-											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna.</p>
-											<p>Sed massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan.</p>
+											<h3 id="base">My Base-makeup products</h3>
+											<p>
+											product1
+											</p>
+											<p>
+											product2
+											</p>
+											<p>
+											product3
+											</p>
+											
+											<h3 id="eye">My Eye-makeup products</h3>
+											<p>
+											product1
+											</p>
+											<p>
+											product2
+											</p>
+											
+											<h3 id="lip">My lip-makeup products</h3>
+											<p>
+											product1
+											</p>
+											<p>
+											product2
+											</p>
+											
+											<h3 id="contour">My contouring products</h3>
+											<p>
+											product1
+											</p>
+											<p>
+											product2
+											</p>
+											
 										</article>
 
 								</div>
@@ -122,40 +117,89 @@
 												<li>
 
 													<!-- Excerpt -->
-														<article class="box excerpt">
+														<article class="base_makeup_box">
 															<header>
-																<span class="date">July 30</span>
-																<h3><a href="#">Just another post</a></h3>
+																<button type="button" class="basebox" style="margin: 0 0 10px 0";>베이스 메이크업 박스</button>
+																<br>
+																<h3><a href="#">가지고 계신 제품들은...</a></h3>
 															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<p>커버력이 좋은 23호 제품들을 사용하고 계시네요! 
+															#봄웜 #커버력 #라벨링
+															</p>
 														</article>
+														<script type="text/javascript">
+														 $(document).ready(function(event){
+															 $(".basebox").on("click",function(){
+																 var offset = $('#base').offset();
+																 $('html').animate({scrollTop: offset.top}, 400);
+															}) 
+														 })
+														</script>
+												</li>
+												<li>
+<!-- aaaaaa -->
+													<!-- Excerpt -->
+														<article class="eye_makeup_box">
+															<header>
+																<button type="button" class="eyebox" style="margin: 0 0 10px 0";>아이 메이크업 박스</button>
+																<br>
+																<h3><a href="#">가지고 계신 제품들은...</a></h3>
+															</header>
+															<p> 펄을 좋아하시나봐요?
+															#글리터 #금펄 #가루날림 #포인트메이크업 </p>
+														</article>
+														<script type="text/javascript">
+														 $(document).ready(function(event){
+															 $(".eyebox").on("click",function(){
+																 var offset = $('#eye').offset();
+																 $('html').animate({scrollTop: offset.top}, 400);
+															}) 
+														 })
+														</script>
 
 												</li>
 												<li>
 
 													<!-- Excerpt -->
-														<article class="box excerpt">
+														<article class="lip_makeup_box">
 															<header>
-																<span class="date">July 28</span>
-																<h3><a href="#">And another post</a></h3>
+																<button type="button" class="lipbox" style="margin: 0 0 10px 0";>립 메이크업 박스</button>
+																<br>
+																<h3><a href="#">가지고 계신 제품들은...</a></h3>
 															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<p> MLBB 처돌이
+															#매트립 #가을여자 #누드 #자연스러운 </p>
 														</article>
+														<script type="text/javascript">
+														 $(document).ready(function(event){
+															 $(".lipbox").on("click",function(){
+																 var offset = $('#lip').offset();
+																 $('html').animate({scrollTop: offset.top}, 400);
+															}) 
+														 })
+														</script>
 
 												</li>
 												<li>
 
 													<!-- Excerpt -->
-														<article class="box excerpt">
+														<article class="contouring_makeup_box">
 															<header>
-																<span class="date">July 24</span>
-																<h3><a href="#">One more post</a></h3>
+																<button type="button" class="contouring" style="margin: 0 0 10px 0";>컨투어링 메이크업 박스</button> <!-- //이게 버튼이어서 내려 주면 좋겠음. --> 
+																<br>
+																<h3><a href="#">가지고 계신 제품들은...</a></h3>
 															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<p> 국민 쉐도우
+															#붉은기가 없는 #자연스러운 #데일리</p>
 														</article>
+														<script type="text/javascript">
+														 $(document).ready(function(event){
+															 $(".contouring").on("click",function(){
+																 var offset = $('#contour').offset();
+																 $('html').animate({scrollTop: offset.top}, 400);
+															}) 
+														 })
+														</script>
 
 												</li>
 											</ul>
@@ -164,36 +208,34 @@
 									<!-- Highlights -->
 										<section>
 											<ul class="divided">
+												
 												<li>
 
 													<!-- Highlight -->
 														<article class="box highlight">
 															<header>
-																<h3><a href="#">Something of note</a></h3>
+																<h3><a href="#">newly released</a></h3>
 															</header>
-															<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
+															<p>신상처돌이들을 위한 신상 추천 >_<.</p>
 															<ul class="actions">
 																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
 															</ul>
 														</article>
 
 												</li>
+												
 												<li>
 
 													<!-- Highlight -->
 														<article class="box highlight">
 															<header>
-																<h3><a href="#">Something of less note</a></h3>
+																<h3><a href="#"> 곧 버려야해요~ </a></h3>
 															</header>
 															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+															<p> 아까워하지말고 피부를 위해서 과감히 버리는 건 어때요? 
+																개봉한지 2년이 넘었어요! 
+															</p>
 															<ul class="actions">
 																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
 															</ul>
