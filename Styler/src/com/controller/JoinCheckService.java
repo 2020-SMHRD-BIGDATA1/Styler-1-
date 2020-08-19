@@ -41,11 +41,11 @@ public class JoinCheckService extends HttpServlet {
 		if(cnt > 0){ // 0보다 크다는 것은 회원가입에 성공했다.
 			System.out.println("회원가입 성공");
 		// main.jsp로 이동
-		response.sendRedirect("/motd/html5up-strongly-typed/main.jsp");
-		
+		response.sendRedirect("/Styler/html5up-strongly-typed/main.jsp");
+		System.out.println("성공");
 		}else{
 			System.out.println("회원가입 실패");
-			response.sendRedirect("../main.jsp");
+			response.sendRedirect("/Styler/html5up-strongly-typed/main.jsp");
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('회원가입에 실패하였습니다.'); </script>");

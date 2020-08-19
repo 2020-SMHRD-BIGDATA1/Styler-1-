@@ -1,6 +1,3 @@
-<%@page import="com.model.communityDAO"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.model.communityDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -11,11 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			#write{
-				padding: 0px !important;
-				width: 80px;
+			#write {
+			    position: absolute;
+			    top: 22em;
+			    left: 88%;
+			    right: 0%;
+			    cursor: default;
+			    text-align:center;
 			}
-			
 		</style>
 	</head>
 	<body class="no-sidebar is-preload">
@@ -47,53 +47,28 @@
 					<div class="container">
 						<div id="content">
 
-
-<div class="row">
+<form method="post" action="writeAction">
 <table class="table table-striped" style="text-align: center; border:1px solid #dddddd">
 <thead>
 <tr>
-<th style="background-color : #eeeeee; text-align : center;">번호</th>
-<th style="background-color : #eeeeee; text-align : center;">제목</th>
-<th style="background-color : #eeeeee; text-align : center;">글내용</th>
-<th style="background-color : #eeeeee; text-align : center;">작성자</th>
-<th style="background-color : #eeeeee; text-align : center;">조회수</th>
-<th style="background-color : #eeeeee; text-align : center;">추천수</th>
-<th style="background-color : #eeeeee; text-align : center;">날짜</th>
+	<th colspan="2" style="background-color : #FF7171; text-align : center;">게시판 글쓰기</th>
 </tr>
 </thead>
 <tbody>
-
-	<% 
-		int pageNumber = 1;
-		if (request.getParameter("pageNumber") != null) {
-		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-	} %>
-	
-	
-	
-	<% 
-		communityDAO dao = new communityDAO();
-		ArrayList<communityDTO> list = dao.getList(pageNumber);
-		for (int i = 0; i<list.size(); i++) { %>
-	
-		<tr>
-
-			<td><%= list.get(i).getCOMM_NUM() %></td>
-			<td><%= list.get(i).getTitle() %></td>
-			<td><%= list.get(i).getContent() %></td>
-			<td>홍길동</td>
-			<td>25</td>
-			<td>12</td>
-			<td><%= list.get(i).getCOM_DATE() %></td>
-		</tr>
-
-		<% } %>
+	<tr>
+		<td><input type="text" class="form-control" placeholder="제목" name="title" maxlength="50"></td>
+	</tr>
+	<tr>
+		<td><textarea class="form-control" placeholder="내용을 입력하세요" name="content" maxlength="2048" style="height: 350px;"></textarea></td>
+	</tr>
 </tbody>
 </table>
-<button id="write" type="button" onclick="location.href='communitywrite.jsp'">글쓰기</button>
+<button type="submit">글쓰기</button>
+</form>
+
+
 </div>
-</div>
-							
+</div>					
 
 			<!-- Footer -->
 				<section id="footer">
