@@ -71,10 +71,11 @@ public class communityDAO {
 	
 		
 		try {				
-			String sql = "INSERT INTO COMMUNITYS VALUES (MSG_NUM.NEXTVAL, ?, ?, SYSDATE)";
+			String sql = "INSERT INTO COMMUNITYS VALUES (MSG_NUM.NEXTVAL, ?, ?,SYSDATE, ?)";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, dto.getTitle());
 			pst.setString(2, dto.getContent());
+			pst.setString(3, dto.getMember_ID());
 			cnt= pst.executeUpdate();
 			     
 		} catch (SQLException e) {
@@ -96,10 +97,15 @@ public class communityDAO {
 			rs = pst.executeQuery();
 			while (rs.next()) {
 				communityDTO comm_dto = new communityDTO();
-				comm_dto.setCOMM_NUM(rs.getInt(1));
+				comm_dto.setCOMM_NUM(rs.getString(1));
 				comm_dto.setTitle(rs.getString(2));
 				comm_dto.setContent(rs.getString(3));
 				comm_dto.setCOM_DATE(rs.getString(4));
+				comm_dto.setMember_ID(rs.getString(5));
+				/*
+				 * COMM_NUM NUMBER, TITLE VARCHAR2(100) NOT NULL, CONTENT VARCHAR2(2048) NOT
+				 * NULL, COM_DATE DATE, MEMBER_ID VARCHAR(100)
+				 */
 				list.add(comm_dto);
 			}
 			
@@ -118,7 +124,7 @@ public class communityDAO {
 		communityDTO comm_dto = new communityDTO();
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
-			pst.setInt(1, comm_dto.getCOMM_NUM() - (pageNumber - 1) * 10);
+			//pst.setInt(1, comm_dto.(Integer.parseInt(getCOMM_NUM())) - (pageNumber - 1) * 10);
 			rs = pst.executeQuery();
 			if (rs.next()) {
 				return true;
@@ -144,12 +150,7 @@ public class communityDAO {
 			return -1;
 		}
 		
-		/*
-		 * public community getCommunity (int id) { String sql =
-		 * "SELECT * FROM COMMUNITYS WHERE ID = ?";
-		 * 
-		 * }
-		 */
+		
 	}
 	
 
