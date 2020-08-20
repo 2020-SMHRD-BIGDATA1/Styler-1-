@@ -1,19 +1,50 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.model.MemberDTO"%>
+<%@page import="com.model.MemberDAO"%>
 <%@page import="com.model.communityDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.communityDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+    pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>No Sidebar - Strongly Typed by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="euc-kr" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
 			#write{
 				padding: 0px !important;
 				width: 80px;
+			}
+			#join {
+			    position: absolute;
+			    top: 3em;
+			    left: 75%;
+			    right: 0%;
+			    cursor: default;
+			}
+			#login {
+			    position: absolute;
+			    top: 3em;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
+			}
+			#myPage {
+			    position: absolute;
+			    top: 3em;
+			    left: 75%;
+			    right: 0%;
+			    cursor: default;
+			}
+			#logout {
+			    position: absolute;
+			    top: 3em;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
 			}
 			
 		</style>
@@ -23,7 +54,28 @@
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container">
+					<div class="container" style="background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
+
+							<!-- Button -->
+							<% 
+								MemberDAO dao = new MemberDAO();
+								MemberDTO dto = new MemberDTO();
+								MemberDTO info = dao.login(dto); 
+								if(info == null){
+							
+							%>
+							
+							<button id="join" value='join' onclick="location.href='join.jsp'">Join </button>
+							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
+							
+							<% }else { %>
+							
+							<button id="myPage" value='myPage' onclick="">My Page</button>
+							<button id="logout" value='logout'>Logout</button>  
+							
+							<% } %>
+							
+							<!-- <button id ="login" value ='login' type="submit" form="loginForm">Login</button> -->
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
@@ -45,6 +97,7 @@
 			<!-- Main -->
 				<section id="main">
 					<div class="container">
+					<img src="whiteBG.png" width="100%"; height= "280px";>
 						<div id="content">
 
 
@@ -70,10 +123,21 @@
 	} %>
 	
 	
+	<%-- <%
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = new MemberDTO();
+		MemberDTO info = dao.login(dto); 
+		String userID=null;
+	    if(info.getId()!=null){
+	    userID =(String)info.getName();
+	    }
+	%> --%>
+	
 	
 	<% 
-		communityDAO dao = new communityDAO();
-		ArrayList<communityDTO> list = dao.getList(pageNumber);
+		communityDAO dao2 = new communityDAO();
+		ArrayList<communityDTO> list = dao2.getList(pageNumber);
+		MemberDTO info2 = (MemberDTO)session.getAttribute("id");
 		for (int i = 0; i<list.size(); i++) { %>
 	
 		<tr>
@@ -81,7 +145,9 @@
 			<td><%= list.get(i).getCOMM_NUM() %></td>
 			<td><%= list.get(i).getTitle() %></td>
 			<td><%= list.get(i).getContent() %></td>
-			<td>ȫ�浿</td>
+			<td>
+			ȫ�浿
+			</td>
 			<td>25</td>
 			<td>12</td>
 			<td><%= list.get(i).getCOM_DATE() %></td>

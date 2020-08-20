@@ -1,13 +1,13 @@
 <%@page import= "com.model.MemberDAO" %>
 <%@page import= "com.model.MemberDTO" %>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+<%request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Strongly Typed by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="EUC-KR" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
@@ -25,25 +25,28 @@
 			    right: 0%;
 			    cursor: default;
 			}
+			
 		</style>
 	</head>
 	<body class="homepage is-preload">
-	<%
-			MemberDTO info = (MemberDTO)session.getAttribute("info");
+	<%		
+			MemberDTO info = (MemberDTO)session.getAttribute("id");
 		%>
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container">
+					<div class="container" style="background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
+   					
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
 							<p>What is your makeup for today?</p>
 						
 						<!-- Button -->
-							<button id="join">Join </button>
-							<button id="login">LogIn</button>
+							<button id="join" value='join' onclick="location.href='join.jsp'">Join </button>
+							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
+							<!-- <button id ="login" value ='login' type="submit" form="loginForm">Login</button> -->
 
 						<!-- Nav -->
 							<nav id="nav">
@@ -61,6 +64,7 @@
 			<!-- Features -->
 				<section id="features">
 					<div class="container">
+					<img src="whiteBG.png" width="100%"; height= "280px";>
 						<header>
 							<h2>Gentlemen, behold! This is <strong>Strongly Typed</strong>!</h2>
 							<% if(info == null){ %>

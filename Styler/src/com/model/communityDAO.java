@@ -132,7 +132,24 @@ public class communityDAO {
 		return false;
 	}
 	
+		public int update(String id, String title, String content) {
+			String sql = "UPDATE COMMUNITYS SET TITLE = ?, CONTENT = ? WHERE ID = ?";
+			try {
+				pst.setString(1, title);
+				pst.setString(2, title);
+				pst.setString(3, content);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return -1;
+		}
 		
+		/*
+		 * public community getCommunity (int id) { String sql =
+		 * "SELECT * FROM COMMUNITYS WHERE ID = ?";
+		 * 
+		 * }
+		 */
 	}
 	
 

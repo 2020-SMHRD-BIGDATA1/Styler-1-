@@ -13,6 +13,11 @@ public class MemberDTO {
 	private String skinproblem;
 	
 
+	
+	public MemberDTO() {
+		super();
+	}
+
 	public MemberDTO(String id, String pw) {
 		super();
 		this.id = id;

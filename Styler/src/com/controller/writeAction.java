@@ -17,8 +17,8 @@ import com.model.communityDTO;
 public class writeAction extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
-		response.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		System.out.println(title);
@@ -41,7 +41,7 @@ public class writeAction extends HttpServlet {
 		if (cnt>0) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href='community.jsp'");
+		script.println("location.href='html5up-strongly-typed/community.jsp'");
 		script.println("alert('게시물이 등록되었습니다')");
 		script.println("</script>");
 			System.out.println("연결 성공");

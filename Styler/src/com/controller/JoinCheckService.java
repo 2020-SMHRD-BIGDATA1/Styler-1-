@@ -24,6 +24,9 @@ public class JoinCheckService extends HttpServlet {
 	
 		//회원가입 기능 수행
 		
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
+		
 		String name = request.getParameter("name");
 		String id = request.getParameter("id"); 
 		String pw = request.getParameter("pw"); 
@@ -40,13 +43,15 @@ public class JoinCheckService extends HttpServlet {
 
 		if(cnt > 0){ // 0보다 크다는 것은 회원가입에 성공했다.
 			System.out.println("회원가입 성공");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('회원가입에 성공하였습니다.'); </script>");
 		// main.jsp로 이동
 		response.sendRedirect("/Styler/html5up-strongly-typed/main.jsp");
 		System.out.println("성공");
 		}else{
 			System.out.println("회원가입 실패");
 			response.sendRedirect("/Styler/html5up-strongly-typed/main.jsp");
-			response.setContentType("text/html; charset=UTF-8");
+			response.setContentType("text/html; charset=euc-kr");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('회원가입에 실패하였습니다.'); </script>");
 			out.flush();
