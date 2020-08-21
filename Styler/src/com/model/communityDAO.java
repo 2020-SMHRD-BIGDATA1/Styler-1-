@@ -94,8 +94,8 @@ public class communityDAO {
 			//pst.setInt(1, 10 - (pageNumber - 1) * 10);
 			rs = pst.executeQuery();
 			while (rs.next()) {
-				communityDTO comm_dto = new communityDTO();
-				comm_dto.setCOMM_NUM(rs.getString(1));
+				communityDTO comm_dto = new communityDTO(pageNumber, sql, sql, sql, sql);
+				comm_dto.setCOMM_NUM(rs.getInt(1));
 				comm_dto.setTitle(rs.getString(2));
 				comm_dto.setContent(rs.getString(3));
 				comm_dto.setCOM_DATE(rs.getString(4));
@@ -119,7 +119,7 @@ public class communityDAO {
 	public boolean nextPage (int pageNumber) {
 		getConnection();
 		String sql =  "select * from (select * from communitys where COMM_NUM < ? order by COMM_NUM desc) where rownum <= 10";
-		communityDTO comm_dto = new communityDTO();
+		communityDTO comm_dto = new communityDTO(pageNumber, sql, sql, sql, sql);
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, 10 - (pageNumber - 1) * 10);
@@ -136,16 +136,16 @@ public class communityDAO {
 		return false;
 	}
 	
-		public int update(String title, String content, String COMM_NUM) {
+		public int update( int COMM_NUM, String title, String content) {
 			int cnt = 0;
-			String sql = "UPDATE COMMUNITYS SET TITLE = ?, CONTENT = ? WHERE COMM_NUM = ?";
-			
+			getConnection();
 			try {
+				String sql = "UPDATE COMMUNITYS SET TITLE = ?, CONTENT = ? WHERE COMM_NUM = ?";
 				pst = conn.prepareStatement(sql);
 				pst.setString(1, title);
 				pst.setString(2, content);
-				pst.setInt(3, Integer.parseInt(COMM_NUM)-87);
-				pst.executeUpdate();
+				pst.setInt(3, COMM_NUM);
+				cnt = pst.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -153,14 +153,14 @@ public class communityDAO {
 		}
 		
 		
-		public int deleteAll(String COMM_NUM) {
+		public int deleteAll(int COMM_NUM) {
 			getConnection();
 			int cnt = 0;
 			String sql = "DELETE * FROM COMMUNITYS WHERE COMM_NUM = ?";
 			
 			try {
 				pst = conn.prepareStatement(sql);
-				pst.setString(1, COMM_NUM);
+				pst.setInt(1, COMM_NUM);
 				cnt= pst.executeUpdate();
 				     
 			} catch (SQLException e) {
@@ -180,8 +180,8 @@ public class communityDAO {
 				pst.setInt(1,  bbsID);
 				rs = pst.executeQuery();
 				if (rs.next()) {
-					communityDTO comm_dto = new communityDTO();
-					comm_dto.setCOMM_NUM(rs.getString(1));
+					communityDTO comm_dto = new communityDTO(bbsID, sql, sql, sql, sql);
+					comm_dto.setCOMM_NUM(rs.getInt(1));
 					comm_dto.setTitle(rs.getString(2));
 					comm_dto.setContent(rs.getString(3));
 					comm_dto.setCOM_DATE(rs.getString(4));

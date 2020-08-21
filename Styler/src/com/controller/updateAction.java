@@ -26,22 +26,22 @@ public class updateAction extends HttpServlet {
 		MemberDTO info = (MemberDTO)session.getAttribute("id");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String COMM_NUM = null;
+		int COMM_NUM = 0;
 		if (request.getParameter("COMM_NUM") != null) {
-			COMM_NUM = request.getParameter("COMM_NUM");}
+			COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));}
 		
 		
 		if (info != null) {
 		String member_ID = info.getId(); 
-		communityDTO dto = new communityDTO(title, content, COMM_NUM);
+		communityDTO dto = new communityDTO(COMM_NUM, title, content);
 		communityDAO dao = new communityDAO();
-		int cnt = dao.update(title, content, COMM_NUM);
+		int cnt = dao.update(COMM_NUM, title, content);
 		
 		
 		if (request.getParameter("title")==null || request.getParameter("content")==null){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('글을 작성해주세요.')");
+			script.println("alert('Please fill in the blank')");
 			script.println("history.back()");
 			script.println("</script>");
 		} 
@@ -50,13 +50,13 @@ public class updateAction extends HttpServlet {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='html5up-strongly-typed/community.jsp'");
-		script.println("alert('게시물이 수정되었습니다')");
+		script.println("alert('Successfully modified')");
 		script.println("</script>");
 			System.out.println("연결 성공");
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('글 수정 실패')");
+			script.println("alert('Fail')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
@@ -65,7 +65,7 @@ public class updateAction extends HttpServlet {
 		else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('로그인을 해주세요.')");
+			script.println("alert('Please login first.')");
 			script.println("history.back()");
 			script.println("</script>");
 		}

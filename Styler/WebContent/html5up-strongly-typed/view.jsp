@@ -123,8 +123,8 @@
 <script>
 function btn_click() {
 	if (confirm("게시글을 삭제하시겠습니까?") == true){
-		response.sendRedirect("../deleteAction");
-			
+		//response.sendRedirect("community.jsp");
+		location.href="../deleteAction";	
 	}else{ 
 	    return;
 	}
