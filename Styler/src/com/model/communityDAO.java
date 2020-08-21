@@ -87,7 +87,7 @@ public class communityDAO {
 	
 	public ArrayList<communityDTO> getList (int pageNumber){
 		getConnection();
-		String sql = "SELECT * FROM COMMUNITYS ORDER BY COM_DATE DESC";
+		String sql = "SELECT * FROM COMMUNITYS ORDER BY COM_DATE";
 		ArrayList<communityDTO> list = new ArrayList<communityDTO>();
 		try {
 			pst = conn.prepareStatement(sql);
@@ -144,7 +144,7 @@ public class communityDAO {
 				pst = conn.prepareStatement(sql);
 				pst.setString(1, title);
 				pst.setString(2, content);
-				pst.setString(3, COMM_NUM);
+				pst.setInt(3, Integer.parseInt(COMM_NUM)-87);
 				pst.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();

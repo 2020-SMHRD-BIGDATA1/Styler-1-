@@ -96,19 +96,19 @@
 		<%  System.out.print("두번째"+COMM_NUM); %>
 		<tr>
 		<td style="width: 20%">글 제목</td>
-		<td colspan="2"><%= list.get(0).getTitle() %></td>
+		<td colspan="2"><%= list.get(COMM_NUM-87).getTitle() %></td>
 	</tr>
 	<tr>
 		<td>작성자</td>
-		<td colspan="2"><%= list.get(0).getMember_ID() %></td>
+		<td colspan="2"><%= list.get(COMM_NUM-87).getMember_ID() %></td>
 	</tr>
 	<tr>
 		<td>작성일자</td>
-		<td colspan="2"><%= list.get(0).getCOM_DATE() %></td>
+		<td colspan="2"><%= list.get(COMM_NUM-87).getCOM_DATE() %></td>
 	</tr>
 	<tr>
 		<td>내용</td>
-		<td colspan="2" style="min-height: 200px; text-align: left;"><%= list.get(0).getContent() %></td>
+		<td colspan="2" style="min-height: 200px; text-align: left;"><%= list.get(COMM_NUM-87).getContent() %></td>
 	</tr>
 	
 		
@@ -116,7 +116,7 @@
 </tbody>
 </table>
 <button id="commumity_list" onclick="location='community.jsp'">목록</button>  
-<% if(info != null && info.getId().equals(list.get(0).getMember_ID())){ %>
+<% if(info != null && info.getId().equals(list.get(COMM_NUM-87).getMember_ID())){ %>
 <button id="commumity_update" onclick="location='update.jsp?COMM_NUM=<%= COMM_NUM %>'">수정</button>  
 
 <button id="delete" onclick="btn_click();">삭제</button>

@@ -16,19 +16,66 @@
 		#main{
 				font-family: 'Jeju Gothic';
 				}
+				
+		#join {
+			    position: absolute;
+			    top: 3em;
+			    left: 75%;
+			    right: 0%;
+			    cursor: default;
+			}
+			#login {
+			    position: absolute;
+			    top: 3em;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
+			}
+			#myPage {
+			    position: absolute;
+			    top: 3em;
+			    left: 75%;
+			    right: 0%;
+			    cursor: default;
+			    height: 50px; padding: 0; width: 120px;
+			}
+			#logout {
+			    position: absolute;
+			    top: 3em;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
+			    height: 50px; padding: 0; width: 120px;
+			}
 		</style>
 
 	</head>
-		<%
-			MemberDTO info = (MemberDTO)session.getAttribute("info");
-		%>
+		
 	<body class="right-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container" style="background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
+					<div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
 
+
+						<!-- Button -->
+							<% 	
+								MemberDTO info = (MemberDTO)session.getAttribute("id");
+								if(info == null){
+								System.out.print("로그인정보 못받아옴");
+							%>
+							
+							<button id="join" value='join' onclick="location.href='join.jsp'" >Join </button>
+							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
+							<% }else { %>
+							
+							<button id="myPage" value='myPage' onclick="">My Page</button>
+							<button id="logout" value='logout'>Logout</button>  
+							
+							<% } %>
+							
+							
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
 							
