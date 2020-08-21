@@ -42,8 +42,8 @@
 							<p>What is your makeup for today?</p>
 						
 						<!-- Button -->
-							<button id="join">Join </button>
-							<button id="login">LogIn</button>
+							<button id="join" value='join' onclick="href=join.jsp">Join </button>
+                   			<button id="login" value='login' onclick="href=login.jsp">LogIn</button>  
 
 						<!-- Nav -->
 							<nav id="nav">

@@ -7,6 +7,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			#join {
+			    position: absolute;
+			    top: 3em;
+			    left: 75%;
+			    right: 0%;
+			    cursor: default;
+			}
+			#login {
+			    position: absolute;
+			    top: 3em;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
+			}
+		</style>
 	</head>
 	<body class="left-sidebar is-preload">
 		<div id="page-wrapper">
@@ -18,6 +34,10 @@
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
 							<p>What is your makeup for today?</p>
+							
+						<!-- Button -->
+							<button id="join" value='join' onclick="location.href='join.jsp'">Join </button>
+                     		<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
 
 						<!-- Nav -->
 							<nav id="nav">

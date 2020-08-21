@@ -19,6 +19,9 @@ public class LoginCheckService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
 		// 로그인 기능 수행
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -31,15 +34,26 @@ public class LoginCheckService extends HttpServlet {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("id", info); 
-			response.sendRedirect("/motd/html5up-strongly-typed/main.jsp");
+			response.setCharacterEncoding("EUC-KR");
+			PrintWriter out = response.getWriter();
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<script>window.history.back();</script>");
+			out.println("</body>");
+			out.println("</html>");
 			//원래페이지로 돌아가게 해주자..
 
 		}else{
-			// 로그인 실패
-			response.setContentType("text/html); charset=UTF-9");
+			response.setContentType("text/html); charset=euc-kr");
+			response.setCharacterEncoding("EUC-KR");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('로그인에 실패하였습니다.');");
-			response.sendRedirect("/motd/html5up-strongly-typed/login.jsp");
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<script>alert('로그인에 실패하였습니다.');location.href=\"html5up-strongly-typed/login.jsp\";</script>");
+			out.println("</body>");
+			out.println("</html>");
+
+			//response.sendRedirect("Styler/html5up-strongly-typed/login.jsp");
 		}	
 
 	}

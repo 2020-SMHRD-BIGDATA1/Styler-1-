@@ -9,6 +9,7 @@
 	background: #fff;
 	}
 	.popup{
+	display: none;
 	font-family: 'Jeju Gothic';
 	position: fixed; 
 	left: 50%; top: 50%; 
@@ -84,6 +85,7 @@
 	}
 	
 	.dim{ 
+	display: none;
 	position : fixed;
 	left: 0;
 	top :0;
@@ -95,7 +97,20 @@
 	}
 </style>
 <script src="assets/js/jquery.min.js"></script>
-
+<script>
+$(document).ready(function(){
+	
+	$(".open").on('click',function(){
+		$(".dim").show();
+		$(".popup").show();
+	});
+		$(".popup .close").on('click',function(){
+			$(this).parent().hide();
+			$(".dim").hide();
+	});
+	
+});
+</script>
 </head>
 <body>
 
