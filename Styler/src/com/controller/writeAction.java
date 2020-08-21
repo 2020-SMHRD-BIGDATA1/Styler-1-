@@ -30,7 +30,6 @@ public class writeAction extends HttpServlet {
 		if (info != null) {
 		String member_ID = info.getId(); 
 		communityDTO dto = new communityDTO(title, content, member_ID);
-		
 		communityDAO dao = new communityDAO();
 		int cnt = dao.write(dto);
 		

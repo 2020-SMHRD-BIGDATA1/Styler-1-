@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import= "com.model.MemberDAO" %>
 <%@page import= "com.model.MemberDTO" %>
 
@@ -106,7 +107,7 @@
 									<section>
 										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 										<header>
-											<h3>Okay, so what is this?</h3>
+											<h3>O.kay, so what is this?</h3>
 										</header>
 										<p>This is <strong>Strongly Typed</strong>, a free, fully responsive site template
 										by <a href="http://html5up.net">HTML5 UP</a>. Free for personal and commercial use under the

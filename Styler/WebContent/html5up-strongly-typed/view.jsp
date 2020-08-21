@@ -1,3 +1,8 @@
+<%@page import="com.model.communityDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.communityDAO"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=euc-kr"
     pageEncoding="euc-kr"%>
 <!DOCTYPE html>
@@ -16,11 +21,44 @@
 			    cursor: default;
 			    text-align:center;
 			}
+			
+			#community_list {
+			    position: absolute;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
 		</style>
 	</head>
 	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+	
+	<%
+   		 String Member_ID =null;
+			MemberDTO info = (MemberDTO)session.getAttribute("id");
+			  if(info.getId()!=null){
+				  Member_ID =(String)info.getId();
+			      }
+		
+			int COMM_NUM = 0;
+		      if(request.getParameter("COMM_NUM") != null){
+		    	  COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
+		      }
+		      System.out.print("첫번째"+COMM_NUM);
+		      
+		      // 만약 넘어온 데이터가 없다면
+		      if(COMM_NUM == 0){
+		         PrintWriter script = response.getWriter();
+		         script.println("<script>");
+		         script.println("alert('유효하지 않은 글입니다')");
+		         script.println("location.href='community.jsp'");
+		         script.println("</script>");
+		         
+		      }
+		         	communityDAO dao = new communityDAO();
+					ArrayList<communityDTO> list = dao.getList(COMM_NUM);
 
+		%>
+		<div id="page-wrapper">
+		
 			<!-- Header -->
 				<section id="header">
 					<div class="container">
@@ -47,26 +85,55 @@
 					<div class="container">
 						<div id="content">
 
-<form method="post" action="../writeAction">
+
 <table class="table table-striped" style="text-align: center; border:1px solid #dddddd">
 <thead>
 <tr>
-	<th colspan="2" style="background-color : #FF7171; text-align : center;">게시판 글쓰기</th>
+	<th colspan="3" style="background-color : #FF7171; text-align : center;">게시판 글 보기</th>
 </tr>
 </thead>
 <tbody>
-	<tr>
-		<td><input type="text" class="form-control" placeholder="제목" name="title" maxlength="50"></td>
+		<%  System.out.print("두번째"+COMM_NUM); %>
+		<tr>
+		<td style="width: 20%">글 제목</td>
+		<td colspan="2"><%= list.get(0).getTitle() %></td>
 	</tr>
 	<tr>
-		<td><textarea class="form-control" placeholder="내용을 입력하세요" name="content" maxlength="2048" style="height: 350px;"></textarea></td>
+		<td>작성자</td>
+		<td colspan="2"><%= list.get(0).getMember_ID() %></td>
 	</tr>
+	<tr>
+		<td>작성일자</td>
+		<td colspan="2"><%= list.get(0).getCOM_DATE() %></td>
+	</tr>
+	<tr>
+		<td>내용</td>
+		<td colspan="2" style="min-height: 200px; text-align: left;"><%= list.get(0).getContent() %></td>
+	</tr>
+	
+		
+	
 </tbody>
 </table>
-<button type="submit">글쓰기</button>
-</form>
+<button id="commumity_list" onclick="location='community.jsp'">목록</button>  
+<% if(info != null && info.getId().equals(list.get(0).getMember_ID())){ %>
+<button id="commumity_update" onclick="location='update.jsp?COMM_NUM=<%= COMM_NUM %>'">수정</button>  
+
+<button id="delete" onclick="btn_click();">삭제</button>
+<script>
+function btn_click() {
+	if (confirm("게시글을 삭제하시겠습니까?") == true){
+		response.sendRedirect("../deleteAction");
+			
+	}else{ 
+	    return;
+	}
+}
+</script>
 
 
+
+<% } %>
 </div>
 </div>					
 
