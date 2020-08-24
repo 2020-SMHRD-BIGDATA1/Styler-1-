@@ -16,7 +16,7 @@ import com.model.communityDAO;
 import com.model.communityDTO;
 
 @WebServlet("/writeAction")
-public class writeAction extends HttpServlet {
+public class CommunityWriteAction extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");

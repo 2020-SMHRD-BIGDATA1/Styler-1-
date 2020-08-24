@@ -62,7 +62,7 @@ public class MemberDAO {
 			
 			getConnection();
 
-			String sql = "INSERT INTO MEMBER VALUES(?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO MOTDMEMBER VALUES(?,?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getName());
 			psmt.setString(2, dto.getId());
@@ -94,7 +94,7 @@ public class MemberDAO {
 			
 			getConnection();
 			
-			String sql = "SELECT * FROM MEMBER WHERE ID = ? AND PW = ?";
+			String sql = "SELECT * FROM MOTDMEMBER WHERE ID = ? AND PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId()); // get.파라미터가 아니라 dto에서 가져오기
 			psmt.setString(2, dto.getPw());
@@ -132,7 +132,7 @@ public class MemberDAO {
 	
 	public ArrayList<MemberDTO> getList (int Number){
 		getConnection();
-		String sql = "SELECT * FROM MEMBER";
+		String sql = "SELECT * FROM MOTDMEMBER";
 		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
