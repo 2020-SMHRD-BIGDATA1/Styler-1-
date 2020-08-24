@@ -26,27 +26,39 @@ public class LoginCheckService extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
+		System.out.println(id);
+		System.out.println(pw);
+		
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDTO info = dao.login(dto); 
+	
 		
 		if(info !=null){
 
 			HttpSession session = request.getSession();
-			session.setAttribute("id", info); 
+			session.setAttribute("info", info); 
+			
 			response.setCharacterEncoding("EUC-KR");
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
 			out.println("<body>");
 			out.println("<script>window.history.back();</script>");
 			out.println("</body>");
-			out.println("</html>");
+
+			// System.out.println("이름이름이름"+info.getName());
+			response.sendRedirect("/Styler/html5up-strongly-typed/main.jsp");
+
 			//원래페이지로 돌아가게 해주자..
 
 		}else{
+			
 			response.setContentType("text/html); charset=euc-kr");
 			response.setCharacterEncoding("EUC-KR");
+			// 로그인 실패
+
 			PrintWriter out = response.getWriter();
+
 			out.println("<html>");
 			out.println("<body>");
 			out.println("<script>alert('로그인에 실패하였습니다.');location.href=\"html5up-strongly-typed/login.jsp\";</script>");
@@ -54,6 +66,7 @@ public class LoginCheckService extends HttpServlet {
 			out.println("</html>");
 
 			//response.sendRedirect("Styler/html5up-strongly-typed/login.jsp");
+
 		}	
 
 	}

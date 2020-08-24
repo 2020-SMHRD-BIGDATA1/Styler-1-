@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+    pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Left Sidebar - Strongly Typed by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="euc-kr" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
@@ -29,7 +29,7 @@
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container">
+					<div class="container" style="background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
@@ -55,6 +55,7 @@
 			<!-- Main -->
 				<section id="main">
 					<div class="container">
+					<img src="whiteBG.png" width="100%"; height= "280px";>
 						<div class="row">
 
 							<!-- Sidebar -->

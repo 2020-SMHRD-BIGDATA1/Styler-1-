@@ -1,13 +1,13 @@
 <%@page import= "com.model.MemberDAO" %>
 <%@page import= "com.model.MemberDTO" %>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+<%request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Strongly Typed by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="EUC-KR" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
@@ -25,32 +25,60 @@
 			    right: 0%;
 			    cursor: default;
 			}
+			#myPage {
+			    position: absolute;
+			    top: 3em;
+			    left: 75%;
+			    right: 0%;
+			    cursor: default;
+			    height: 50px; padding: 0; width: 120px;
+			}
+			#logout {
+			    position: absolute;
+			    top: 3em;
+			    left: 85%;
+			    right: 0%;
+			    cursor: default;
+			    height: 50px; padding: 0; width: 120px;
+			}
+			
 		</style>
 	</head>
 	<body class="homepage is-preload">
-	<%
-			MemberDTO info = (MemberDTO)session.getAttribute("info");
-		%>
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container">
+					<div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
+   					
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
 							<p>What is your makeup for today?</p>
 						
 						<!-- Button -->
-							<button id="join" value='join' onclick="href=join.jsp">Join </button>
-                   			<button id="login" value='login' onclick="href=login.jsp">LogIn</button>  
+
+						<% 	
+								MemberDTO info = (MemberDTO)session.getAttribute("id");
+								if(info == null){
+								System.out.print("로그인정보 못받아옴");
+							%>
+							
+							<button id="join" value='join' >Join </button>d
+							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
+							<% }else { %>
+							
+							<button id="myPage" value='myPage' onclick="">My Page</button>
+							<button id="logout" value='logout'>Logout</button>  
+							
+							<% } %>
 
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
 									<li><a class="icon solid fa-home" href="main.jsp"><span>Home</span></a></li>
 									<li><a class="icon solid fa-cog" href="makeupsearch.jsp"><span>Makeup</span></a></li>
-									<li><a class="icon solid fa-retweet" href="mypouch.jsp"><span>My Pouch</span></a></li>
+									<li><a class="icon solid fa-retweet" href="tttt.jsp"><span>My Pouch</span></a></li>
 									<li><a class="icon solid fa-sitemap" href="community.jsp"><span>Community</span></a></li>
 								</ul>
 							</nav>
@@ -61,6 +89,7 @@
 			<!-- Features -->
 				<section id="features">
 					<div class="container">
+					<img src="whiteBG.png" width="100%"; height= "280px";>
 						<header>
 							<h2>Gentlemen, behold! This is <strong>Strongly Typed</strong>!</h2>
 							<% if(info == null){ %>

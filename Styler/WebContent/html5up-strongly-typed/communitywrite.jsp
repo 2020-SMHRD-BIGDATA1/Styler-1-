@@ -1,9 +1,3 @@
-<%@page import="java.io.PrintWriter"%>
-<%@page import="com.model.MemberDTO"%>
-<%@page import="com.model.MemberDAO"%>
-<%@page import="com.model.communityDAO"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.model.communityDTO"%>
 <%@ page language="java" contentType="text/html; charset=euc-kr"
     pageEncoding="euc-kr"%>
 <!DOCTYPE html>
@@ -14,51 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			#write{
-				padding: 0px !important;
-				width: 90px;
-				left: 80%;
-				height: 50px;
-				
-			}
-			#join {
+			#write {
 			    position: absolute;
-			    top: 3em;
-			    left: 75%;
+			    top: 22em;
+			    left: 88%;
 			    right: 0%;
 			    cursor: default;
-			    
+			    text-align:center;
 			}
-			#login {
-			    position: absolute;
-			    top: 3em;
-			    left: 83%;
-			    right: 0%;
-			    cursor: default;
-			   
-			}
-			#myPage {
-			    position: absolute;
-			    top: 3em;
-			    left: 75%;
-			    right: 0%;
-			    cursor: default;
-			    height: 50px; padding: 0; width: 120px;
-			}
-			#logout {
-			    position: absolute;
-			    top: 3em;
-			    left: 85%;
-			    right: 0%;
-			    cursor: default;
-			    height: 50px; padding: 0; width: 120px;
-			}
-			
-			.page {
-			color: #000000;
-			text-decoration : none;
-			}
-			
 		</style>
 	</head>
 	<body class="no-sidebar is-preload">
@@ -66,29 +23,11 @@
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container" style="padding: 5em 0 5em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:10%; text-align:center; z-index:1000;">
+					<div class="container">
 
-							<!-- Button -->
-							<% 	
-								MemberDTO info = (MemberDTO)session.getAttribute("id");
-								if(info == null){
-								System.out.print("로그인정보 못받아옴");
-							%>
-							
-							<button id="join" value='join' >Join </button>
-							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
-							<% }else { %>
-							
-							<button id="myPage" value='myPage' onclick="">My Page</button>
-							<button id="logout" value='logout'>Logout</button>  
-							
-							<% } %>
-							
-							<!-- <button id ="login" value ='login' type="submit" form="loginForm">Login</button> -->
-
-						<!-- Logo 
+						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
-							<p>What is your makeup for today?</p>-->
+							<p>What is your makeup for today?</p>
 
 						<!-- Nav -->
 							<nav id="nav">
@@ -106,80 +45,34 @@
 			<!-- Main -->
 				<section id="main">
 					<div class="container">
-					<img src="whiteBG.png" width="100%"; height= "150px";>
 						<div id="content">
 
-
-<div class="row">
+<form method="post" action="../writeAction">
 <table class="table table-striped" style="text-align: center; border:1px solid #dddddd">
 <thead>
-<tr> 
-<th style="background-color : #eeeeee; text-align : center;">번호</th>
-<th style="background-color : #eeeeee; text-align : center;">제목</th>
-<th style="background-color : #eeeeee; text-align : center;">글내용</th>
-<th style="background-color : #eeeeee; text-align : center;">작성자</th>
-<th style="background-color : #eeeeee; text-align : center;">조회수</th>
-<th style="background-color : #eeeeee; text-align : center;">추천수</th>
-<th style="background-color : #eeeeee; text-align : center;">날짜</th>
+<tr>
+	<th colspan="2" style="background-color : #FF7171; text-align : center;">게시판 글쓰기</th>
 </tr>
 </thead>
 <tbody>
-
-	<% 
-		int pageNumber = 1;
-		if (request.getParameter("pageNumber") != null) {
-		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-	} %>
-	
-	
-	<%-- <%
-		MemberDAO dao = new MemberDAO();
-		MemberDTO dto = new MemberDTO();
-		MemberDTO info = dao.login(dto); 
-		String userID=null;
-	    if(info.getId()!=null){
-	    userID =(String)info.getName();
-	    }
-	%> --%>
-	
-	
-	<% 
-		communityDAO dao2 = new communityDAO();
-		ArrayList<communityDTO> list = dao2.getList(pageNumber);
-		MemberDTO info2 = (MemberDTO)session.getAttribute("id");
-		for (int i = 0; i<list.size(); i++) { %>
-	
-		<tr>
-			<td><%= list.get(i).getCOMM_NUM() %></td>
-			<td><a class="page" href="view.jsp?Member_ID=<%=list.get(i).getMember_ID() %>"><%= list.get(i).getTitle() %></td>
-			<td><%= list.get(i).getContent() %></td>
-			<td><%= list.get(i).getMember_ID() %></td>
-			<td>25</td>
-			<td>12</td>
-			<td><%= list.get(i).getCOM_DATE() %></td>
-		</tr>
-
-		<% } %>
+	<tr>
+		<td><input type="text" class="form-control" placeholder="제목" name="title" maxlength="50"></td>
+	</tr>
+	<tr>
+		<td><textarea class="form-control" placeholder="내용을 입력하세요" name="content" maxlength="2048" style="height: 350px;"></textarea></td>
+	</tr>
 </tbody>
 </table>
+<button type="submit">글쓰기</button>
+</form>
 
-<% if(pageNumber != 1) { %>
-<a class="page" style="padding: 0 0 0 0;" href ="community.jsp?pageNumber=<%=pageNumber-1 %>" class="btn btn-success btn-arrow-left">이전</a>
-<%} else {
-//} if (communityDAO.nextPage(pageNumber+1)) {%>
-<a class="page" style="padding: 0 0 0 0;" href ="community.jsp?pageNumber=<%=pageNumber+1 %>" class="btn btn-success btn-arrow-left">다음</a>
-<% } %>
 
-<button id="write" type="button" onclick="location.href='communitywrite.jsp'">글쓰기</button>
-	<img src="whiteBG.png" width="100%"; height= "50px";>
 </div>
-</div>
-							
+</div>					
 
 			<!-- Footer -->
 				<section id="footer">
 					<div class="container">
-				
 						<header>
 							<h2>Questions or comments? <strong>Get in touch:</strong></h2>
 						</header>

@@ -31,17 +31,46 @@ public class Addtopouch extends HttpServlet {
 		String color = request.getParameter("color");
 		String opendate = request.getParameter("opendate");
 
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		System.out.println(id);
+		System.out.println(pw);
+		
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = new MemberDTO(id, pw);
+		MemberDTO info = dao.login(dto); 
+		
+		
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("info", info); //??? 회원가입할때 받은거 
+		String memberid = info.getId();
 		
-		CosmeticDTO dto = new CosmeticDTO(pch_name, part, parttype, brand, color, opendate);
-		CosmeticDAO dao = new CosmeticDAO();
-		int cnt = dao.add(dto);
+		CosmeticDTO dto2 = new CosmeticDTO(pch_name, brand, color, part, parttype, opendate);
+		CosmeticDAO dao2 = new CosmeticDAO();
+		int cnt4 = dao2.add(memberid, dto2);
 
-		if(cnt > 0){ // 0보다 크다는 것은 파우치 등록에 성공했다.
+		if(cnt4 > 0){ // 0보다 크다는 것은 파우치 등록에 성공했다.
 			
+			response.setCharacterEncoding("EUC-KR");
+			PrintWriter out = response.getWriter();
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<script> alert('파우치에 담겼습니다.');</script>");
+			out.println("</body>");
+
 		}else{
-			
+			response.setContentType("text/html); charset=euc-kr");
+			response.setCharacterEncoding("EUC-KR");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<script>alert('파우치에 담기지 않습니다.');location.href=\"html5up-strongly-typed/mypouch.jsp\";</script>");
+			out.println("</body>");
+			out.println("</html>");
 		}
 		
 		

@@ -1,14 +1,16 @@
 <%@page import= "com.model.MemberDAO" %>
 <%@page import= "com.model.MemberDTO" %>
+<%@page import= "com.model.CosmeticDAO" %>
+<%@page import= "com.model.CosmeticDTO" %>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+    pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<script src="assets/js/jquery.min.js"></script>
 		<title>Right Sidebar - Strongly Typed by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="euc-kr" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"/>
@@ -27,7 +29,7 @@
 
 			<!-- Header -->
 				<section id="header">
-					<div class="container">
+					<div class="container" style="background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
@@ -42,6 +44,7 @@
 							
 						<!-- Nav -->
 							<nav id="nav">
+						
 								<ul>
 									<li><a class="icon solid fa-home" href="main.jsp"><span>Home</span></a></li>
 									<li><a class="icon solid fa-cog" href="makeupsearch.jsp"><span>Makeup</span></a></li>
@@ -56,7 +59,11 @@
 			<!-- Main -->
 				<section id="main">
 					<div class="container">
+					<img src="whiteBG.png" width="100%"; height= "280px";>
 						<div class="row">
+								<% if(info == null){ %>
+										<h1>로그인하시면 파우치를 등록하실 수 있습니다.</h1>
+							<%}else{  %> 
 
 							<!-- Content -->
 								<div id="content" class="col-8 col-12-medium">
@@ -104,41 +111,11 @@
 											product3
 											</p>
 											
+											<a href="" class="open"> 화장품 추가하기</a>
+											
 											<h3 id="eye">My Eye-makeup products</h3>
 											<p>
-											
-											<ul data-v-991c3c50="" class="contents__product-info"><li data-v-991c3c50="" class="contents__product-info__li contents__product-info__image"><div data-v-4aaf0415="" data-v-991c3c50="" class="image-and-labels contents__product-info__image__section"><section data-v-4aaf0415="" class="image-and-labels__section"><ul data-v-4aaf0415="" class="image-and-labels__section__ul labels"><li data-v-4aaf0415="" class="labels__item"><span data-v-4aaf0415="" class="labels__item__rank_info">매트립스틱 3위</span></li> <li data-v-4aaf0415="" class="labels__item sns-links"><a data-v-4aaf0415="" class="sns-links__buttons icon-sprite link-kakao-color"></a> <a data-v-4aaf0415="" class="sns-links__buttons sns-links__open_popup"><span data-v-4aaf0415="" class="sns-links__buttons__icon icon-sprite btn-share"></span></a></li></ul> <figure data-v-4aaf0415="" class="image-and-labels__section__figure"><div data-v-43fb444d="" data-v-4aaf0415="" class="product-image-wrapper image-and-labels__section__figure__img"><div data-v-1c7d6d15="" data-v-43fb444d="" role="img" aria-label="" class="image product-image__detail--desktop image--loaded" style="width: 100%; height: 100%;"><meta data-v-1c7d6d15="" itemprop="image" content="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20190927/1569572490271.jpg"> <!----> <div data-v-1c7d6d15="" title="" class="image__background-image" style="width: 100%; height: 100%; background-image: url(&quot;https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20190927/1569572490271.jpg&quot;);"></div></div> <div data-v-1c7d6d15="" data-v-43fb444d="" role="img" aria-label="" class="image product-image__detail--mobile image--loaded" style="width: 100%; height: 100%;"><meta data-v-1c7d6d15="" itemprop="image" content="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20190927/1569572490271.jpg"> <!----> <div data-v-1c7d6d15="" title="" class="image__background-image" style="width: 100%; height: 100%; background-image: url(&quot;https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20190927/1569572490271.jpg&quot;);"></div></div></div></figure></section></div></li> <li data-v-991c3c50="" class="contents__product-info__li contents__product-info__text"><section data-v-7c039372="" data-v-991c3c50="" class="product-main-info"><p data-v-7c039372="" class="product-main-info__brand_name">
-        지방시 뷰티 (Givenchy Beauty)
-    </p> <h1 data-v-7c039372="" class="product-main-info__product_name"><span data-v-7c039372="" class="product-main-info__product_name__text"><!---->
-            르 루즈
-        </span></h1> <div data-v-7c039372="" class="sns-links"><a data-v-7c039372="" class="sns-links__button link-pop-up"><span data-v-7c039372="" class="sns-links__button__icon icon-sprite btn-share"></span></a></div> <div data-v-7c039372="" class="product-main-info__data_wrapper"><div data-v-7c039372="" class="product-main-info__volume_price">
-            3.4g / <span data-v-7c039372="" class="product-main-info__volume_price--bold">48,000</span>원
-        </div> <div data-v-7c039372="" class="product-main-info__ratings ratings"><span data-v-7c039372="" class="ratings__score">4.39</span> <div data-v-7c039372="" class="ratings__heart_graph"><ul data-v-4385e41e="" data-v-7c039372=""><li data-v-4385e41e=""><article data-v-14354dc6="" data-v-4385e41e="" class="heart-comp"><div data-v-14354dc6="" class="wrap" style="width: 100%;"><div data-v-14354dc6="" class="graphic"></div></div></article></li><li data-v-4385e41e=""><article data-v-14354dc6="" data-v-4385e41e="" class="heart-comp"><div data-v-14354dc6="" class="wrap" style="width: 100%;"><div data-v-14354dc6="" class="graphic"></div></div></article></li><li data-v-4385e41e=""><article data-v-14354dc6="" data-v-4385e41e="" class="heart-comp"><div data-v-14354dc6="" class="wrap" style="width: 100%;"><div data-v-14354dc6="" class="graphic"></div></div></article></li><li data-v-4385e41e=""><article data-v-14354dc6="" data-v-4385e41e="" class="heart-comp"><div data-v-14354dc6="" class="wrap" style="width: 100%;"><div data-v-14354dc6="" class="graphic"></div></div></article></li><li data-v-4385e41e=""><article data-v-14354dc6="" data-v-4385e41e="" class="heart-comp"><div data-v-14354dc6="" class="wrap" style="width: 39%;"><div data-v-14354dc6="" class="graphic"></div></div></article></li></ul></div> <span data-v-7c039372="" class="ratings__review_count">(187)</span></div></div> <div data-v-7c039372="" class="product-main-info__brand_wrapper brand_info"><figure data-v-7c039372="" class="brand_info__logo"><div data-v-fedb599a="" data-v-7c039372="" class="brand-image brand_info__logo__img brand-image--long-height"><div data-v-1c7d6d15="" data-v-fedb599a="" role="img" aria-label="브랜드 명 지방시 뷰티 (Givenchy Beauty)의 로고 이미지" class="image image--loaded" style="width: 100%; height: 100%;"><meta data-v-1c7d6d15="" itemprop="image" content="https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20191102/1572681083333_160.jpg"> <!----> <div data-v-1c7d6d15="" title="브랜드 명 지방시 뷰티 (Givenchy Beauty)의 로고 이미지" class="image__background-image" style="width: 100%; height: 100%; background-image: url(&quot;https://dn5hzapyfrpio.cloudfront.net/home/glowmee/upload/20191102/1572681083333_160.jpg&quot;);"></div></div></div></figure> <span data-v-7c039372="" class="brand_info__brand-name">지방시 뷰티 (Givenchy Beauty)</span> <button data-v-31c80b71="" data-v-7c039372="" type="button" class="button-link"><span data-v-31c80b71="" class="button-link__text">브랜드홈</span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-black"></span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-white"></span></button></div></section> <!----> <section data-v-71605cff="" data-v-991c3c50="" class="ingredient contents__product-info__text__section"><div data-v-f520a820="" data-v-71605cff="" class="product-info-contents contents"><div data-v-f520a820="" class="contents__icon"><span data-v-f520a820="" class="contents__icon__span"><span data-v-f520a820="" class="contents__icon__span__sprite icon-sprite label-ingredient"></span></span></div> <div data-v-f520a820="" class="contents__text"><span data-v-f520a820="" class="contents__text__title">
-            유의해야 할 성분 향료
-        </span> <span data-v-f520a820="" class="contents__text__sub">
-                ·등급미정 성분1개 포함
-            </span></div> <span data-v-f520a820="" class="contents__arrow-icon"><span data-v-f520a820="" class="icon-sprite btn-move-black"></span></span> <span data-v-f520a820="" class="contents__link-button"><button data-v-31c80b71="" data-v-f520a820="" type="button" class="button-link"><span data-v-31c80b71="" class="button-link__text">성분정보</span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-black"></span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-white"></span></button></span></div> <button data-v-71605cff="" class="ingredient__mobile-button"></button></section> <section data-v-3b7c2262="" data-v-991c3c50="" class="info contents__product-info__text__section"><div data-v-f520a820="" data-v-3b7c2262="" class="product-info-contents contents"><div data-v-f520a820="" class="contents__icon"><span data-v-f520a820="" class="contents__icon__span"><span data-v-f520a820="" class="contents__icon__span__sprite icon-sprite label-pdtinfo"></span></span></div> <div data-v-f520a820="" class="contents__text"><span data-v-f520a820="" class="contents__text__title">
-            제품정보 자세히 보기
-        </span> </div> <span data-v-f520a820="" class="contents__arrow-icon"><span data-v-f520a820="" class="icon-sprite btn-move-black"></span></span> <!----></div> <button data-v-3b7c2262="" class="info__mobile-button"></button> <table data-v-3b7c2262="" class="info__table"><tbody data-v-3b7c2262=""><tr data-v-3b7c2262="" class="info__category-list info__tr"><th data-v-3b7c2262="" class="info__th"><span data-v-3b7c2262="" class="title">카테고리</span></th> <td data-v-3b7c2262="" class="info__td"><div data-v-3b7c2262="" class="info__category-wrap"><p data-v-3b7c2262="" class="info__categories"><span data-v-3b7c2262="" class="info__category">
-                                립스틱 매트립스틱
-                            </span></p> <button data-v-31c80b71="" data-v-3b7c2262="" type="button" class="button-link"><span data-v-31c80b71="" class="button-link__text">랭킹확인</span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-black"></span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-white"></span></button></div><div data-v-3b7c2262="" class="info__category-wrap"><p data-v-3b7c2262="" class="info__categories"><span data-v-3b7c2262="" class="info__category">
-                                립스틱
-                            </span></p> <button data-v-31c80b71="" data-v-3b7c2262="" type="button" class="button-link"><span data-v-31c80b71="" class="button-link__text">랭킹확인</span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-black"></span> <span data-v-31c80b71="" class="button-link__icon icon-sprite btn-more-small-white"></span></button></div></td></tr> <!----> <tr data-v-3b7c2262="" class="info__description-box info__tr"><th data-v-3b7c2262="" class="info__th"><span data-v-3b7c2262="" class="title">설명</span></th> <td data-v-3b7c2262="" class="info__td"><div data-v-3b7c2262="" class="info__description">부드럽고 편안한 밀착감의 빛나는 매트 피니쉬 립스틱</div> <p data-v-3b7c2262="" class="info__description__button-wrap"><button data-v-3b7c2262="" class="info__description__show-more-button">
-                            더보기
-                        </button></p></td></tr> <tr data-v-3b7c2262="" class="info__color-type info__tr"><th data-v-3b7c2262="" class="info__th"><span data-v-3b7c2262="" class="title">컬러/타입</span></th> <td data-v-3b7c2262="" class="info__td"><div data-v-3b7c2262="" class="info__color-type-list">
-                        N100 베이지 카라망 / N102 베이지 플럼 / N103 브륀 크레아테르 / N105 브륀 빈티지 / N110 로즈 디아판 / 
-N201 로즈 타프타 / N202 로즈 드레싱 / N204 로즈 부두아 / N205 푸시아 이레지스터블 / N209 로즈 퍼펙토 / N214 로즈 브로드리 / N218 바이올렛 오데셔스 / 
-N301매그놀리아 오간자 / N302 히비스커스 익스클루시브 / N303 코랄 데콜테 / N304 만다린 볼레로 / N305 루즈 에제리 / N306 카민 에스카르핀 / N307 그레나 이니시에 / 
-N315 벨벳 프람부아즈 / N316 오렌지 압솔뤼 / N317 코랄 시그니쳐 / N323 프람부아즈 꾸뛰르 / N324 코랄 백스테이지 / N325 류즈 페티쉐 / N326 퍼플 엣지 / 
-N333 랑떼르디 / N334 그레나 볼롱테
-                    </div></td></tr> <tr data-v-3b7c2262="" class="info__tag-list info__tr"><th data-v-3b7c2262="" class="info__th"><span data-v-3b7c2262="" class="title">태그</span></th> <td data-v-3b7c2262="" class="info__td"><p data-v-3b7c2262=""><span data-v-3b7c2262="" class="info__tags">
-                            보습
-                        </span><span data-v-3b7c2262="" class="info__tags">
-                            생기부여
-                        </span><span data-v-3b7c2262="" class="info__tags">
-                            영양공급
-                        </span></p></td></tr></tbody></table></section></li></ul>
-                        
+                        					product1
 											</p>
 											<p>
 											product2
@@ -384,7 +361,7 @@ N333 랑떼르디 / N334 그레나 볼롱테
 				</section>
 
 		</div>
-
+	<%} %>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>

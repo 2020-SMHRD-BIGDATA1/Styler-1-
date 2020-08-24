@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+    pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="euc-kr">
 <title>Insert title here</title>
 <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"/>
 <style>
@@ -100,7 +100,7 @@
 
 </head>
 <body>
-<form action = "../LoginCheckService" method = "post">
+<form action = "../LoginCheckService" id="loginForm" method = "post" accept-charset="euc-kr">
 	<div class="popup">
 		<h2> 로그인 하기 </h2>
 		<div class="content">
@@ -125,7 +125,7 @@
 		</table>
 		</div>
 		<div class="txt_center">
-		<input type="submit" value="LOGIN" class="btn_finish">
+		<input type="submit" value="LOGIN" class="btn_finish" >
 		</div>
 		<a href="#" onClick="history.back(-1);" class="close"> <img src="images/btn-close1.jpg" style="width: 41px;"></a>	
 		</div>

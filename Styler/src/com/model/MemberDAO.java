@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MemberDAO {
 	
@@ -112,7 +113,8 @@ public class MemberDAO {
      			 String skinproblem = rs.getString(9);
 
      			 info = new MemberDTO(name, id, pw, tel, birthday, sex, tone, skintype, skinproblem);
-                 System.out.println(info);
+     			 System.out.println("너냐");
+                 System.out.println(info.getName());
               } else {
                  System.out.println("로그인 실패");
               }
@@ -126,7 +128,37 @@ public class MemberDAO {
             
           // 로그인 DB 종료 부분
     return info;
- }
+ }	
+	
+	public ArrayList<MemberDTO> getList (int Number){
+		getConnection();
+		String sql = "SELECT * FROM MEMBER";
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		try {
+			PreparedStatement pst = conn.prepareStatement(sql);
+			// pst.setInt(1,  comm_dto.getCOMM_NUM() - (pageNumber - 1) * 10);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				MemberDTO mem_dto = new MemberDTO();
+				mem_dto.setName(rs.getString(1));
+				mem_dto.setId(rs.getString(2));
+				mem_dto.setPw(rs.getString(3));
+				mem_dto.setTel(rs.getString(4));
+				mem_dto.setBirthday(rs.getString(5));
+				mem_dto.setSex(rs.getString(6));
+				mem_dto.setTone(rs.getString(7));
+				mem_dto.setSkintype(rs.getString(8));
+				mem_dto.setSkinproblem(rs.getString(9));
+				list.add(mem_dto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
 	
 
 
