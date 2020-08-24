@@ -27,14 +27,13 @@ public class deleteAction extends HttpServlet {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		
-		int COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
+		int COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM").trim());
 		System.out.print("±Û¹øÈ£"+COMM_NUM);
-		
 		if (info != null) {
 		String member_ID = info.getId(); 
 		communityDTO dto = new communityDTO(COMM_NUM, title, content);
 		communityDAO dao = new communityDAO();
+		COMM_NUM = dto.getCOMM_NUM();
 		int cnt = dao.deleteAll(COMM_NUM);
 		
 		

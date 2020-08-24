@@ -80,7 +80,7 @@
 							<% }else { %>
 							
 							<button id="myPage" value='myPage' onclick="">My Page</button>
-							<button id="logout" value='logout'>Logout</button>  
+							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>
 							

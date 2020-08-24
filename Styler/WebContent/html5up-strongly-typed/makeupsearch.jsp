@@ -1,15 +1,23 @@
-<%@page import="com.model.MemberDTO"%>
+<%@page import= "com.model.MemberDAO" %>
+<%@page import= "com.model.MemberDTO" %>
+
 <%@ page language="java" contentType="text/html; charset=euc-kr"
     pageEncoding="euc-kr"%>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Left Sidebar - Strongly Typed by HTML5 UP</title>
+		<script src="assets/js/jquery.min.js"></script>
+		<title>Right Sidebar - Strongly Typed by HTML5 UP</title>
 		<meta charset="euc-kr" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"/>
 		<style>
-			#join {
+		#main{
+				font-family: 'Jeju Gothic';
+				}
+				
+		#join {
 			    position: absolute;
 			    top: 3em;
 			    left: 75%;
@@ -39,17 +47,18 @@
 			    cursor: default;
 			    height: 50px; padding: 0; width: 120px;
 			}
-			
 		</style>
+
 	</head>
-	<body class="left-sidebar is-preload">
+		
+	<body class="right-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<section id="header">
-				<div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
-						
-						
+					<div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
+
+
 						<!-- Button -->
 							<% 	
 								MemberDTO info = (MemberDTO)session.getAttribute("id");
@@ -62,17 +71,25 @@
 							<% }else { %>
 							
 							<button id="myPage" value='myPage' onclick="">My Page</button>
-							<button id="logout" value='logout'>Logout</button>  
+							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>
 							
 							
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
-							<p>What is your makeup for today?</p>
-
+							
+							<p>
+							<% if(info == null){ %>
+										<h2>What is your makeup for today?</h2>
+							<%}else{  %>
+										<h2>Good day<%= info.getName() %>!!! let's decide your makeup for today.</h2>
+							<%} %>
+							</p> 
+							
 						<!-- Nav -->
 							<nav id="nav">
+						
 								<ul>
 									<li><a class="icon solid fa-home" href="main.jsp"><span>Home</span></a></li>
 									<li><a class="icon solid fa-cog" href="makeupsearch.jsp"><span>Makeup</span></a></li>
@@ -89,6 +106,82 @@
 					<div class="container">
 					<img src="whiteBG.png" width="100%"; height= "280px";>
 						<div class="row">
+
+							<!-- Content -->
+								<div id="content" class="col-8 col-12-medium">
+
+									<!-- Post -->
+										<article class="box post">
+											<header>
+												<h2>Behold! This is the <strong>right sidebar</strong> layout<br />
+												with a sidebar on the right!</h2>
+											</header>
+											<span class="image featured"><img src="images/pic04.jpg" alt="" /></span>
+											<h3>Right is also not left</h3>
+											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
+											<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
+											Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
+											vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
+											magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
+											tristique at erat. Curabitur leo nibh, rutrum eu malesuada in, tristique
+											at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
+											tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
+											magna tempus</p>
+											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
+											<h3>Accumsan lorem ipsum veroeros</h3>
+											<p>Consequat Phasellus laoreet massa id in, tristique at erat lorem
+											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna.</p>
+											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
+											<h3>Ligula suspcipit fusce veroeros</h3>
+											<p>Nullam dolore etiam sed massa id in, tristique at erat lorem
+											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna.</p>
+											<p>Sed massa id justo mattis pharetra. Fusce suscipit
+											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna accumsan.</p>
+										</article>
+
+								</div>
 
 							<!-- Sidebar -->
 								<div id="sidebar" class="col-4 col-12-medium">
@@ -179,82 +272,6 @@
 												</li>
 											</ul>
 										</section>
-
-								</div>
-
-							<!-- Content -->
-								<div id="content" class="col-8 col-12-medium imp-medium">
-
-									<!-- Post -->
-										<article class="box post">
-											<header>
-												<h2>Behold! This is the <strong>left sidebar</strong> layout<br />
-												with a sidebar on the left!</h2>
-											</header>
-											<span class="image featured"><img src="images/pic04.jpg" alt="" /></span>
-											<h3>Left is the opposite of right</h3>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
-											Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
-											vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
-											magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
-											tristique at erat. Curabitur leo nibh, rutrum eu malesuada in, tristique
-											at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
-											tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
-											magna tempus</p>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<h3>Accumsan lorem ipsum veroeros</h3>
-											<p>Consequat Phasellus laoreet massa id in, tristique at erat lorem
-											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna.</p>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<h3>Ligula suspcipit fusce veroeros</h3>
-											<p>Nullam dolore etiam sed massa id in, tristique at erat lorem
-											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna.</p>
-											<p>Sed massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan.</p>
-										</article>
 
 								</div>
 

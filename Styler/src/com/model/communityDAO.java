@@ -156,7 +156,7 @@ public class communityDAO {
 		public int deleteAll(int COMM_NUM) {
 			getConnection();
 			int cnt = 0;
-			String sql = "DELETE * FROM COMMUNITYS WHERE COMM_NUM = ?";
+			String sql = "DELETE FROM COMMUNITYS WHERE COMM_NUM = ?";
 			
 			try {
 				pst = conn.prepareStatement(sql);
