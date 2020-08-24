@@ -146,7 +146,7 @@
 									<li><a href="#" class="button icon solid fa-file">Tell Me More</a></li>
 								</ul>
 							</div>
-						</div>
+						</div>.
 					</div>
 				</section>
 

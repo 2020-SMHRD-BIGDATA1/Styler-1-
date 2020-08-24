@@ -136,8 +136,8 @@ public class communityDAO {
 		return false;
 	}
 	
-		public int update( int COMM_NUM, String title, String content) {
-			int cnt = 0;
+		public int update(int COMM_NUM, String title, String content) {
+		
 			getConnection();
 			try {
 				String sql = "UPDATE COMMUNITYS SET TITLE = ?, CONTENT = ? WHERE COMM_NUM = ?";
@@ -145,11 +145,11 @@ public class communityDAO {
 				pst.setString(1, title);
 				pst.setString(2, content);
 				pst.setInt(3, COMM_NUM);
-				cnt = pst.executeUpdate();
+				return pst.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			return cnt;
+			return -1;
 		}
 		
 		
@@ -173,7 +173,7 @@ public class communityDAO {
 		}
 		
 		public communityDTO getBbs(int bbsID) {
-			
+			getConnection();
 			String sql = "SELECT * FROM COMMUNITYS WHERE MEMBER_ID = ?";
 			try {
 				PreparedStatement pst = conn.prepareStatement(sql);
@@ -193,9 +193,33 @@ public class communityDAO {
 				} finally {
 					close();
 				}return null;
-			
 		}
-		
-		
-	}
+				
+					
+			public int updateHits(int no) throws Exception {
+
+				int result = 0;
+
+					try {
+						getConnection();
+					String sql = "update board " + "set HITS = HITS + 1" + "where COMM_NUM=?";
+					pst = conn.prepareStatement(sql);
+					pst.setInt(1, no);
+
+					result = pst.executeUpdate();
+					System.out.println("조회수 1 증가");
+
+					} catch (Exception e) {
+					e.printStackTrace();
+					throw new Exception("오류 발생");
+					} finally {
+						close();
+					}
+					System.out.println("조회수 결과" + result);
+					return result;
+					}
+			}
+
+
+	
 	

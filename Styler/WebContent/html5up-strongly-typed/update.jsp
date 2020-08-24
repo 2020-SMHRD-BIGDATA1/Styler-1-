@@ -84,6 +84,7 @@
 	</tr>
 </tbody>
 </table>
+<input type="hidden" name="COMM_NUM" value = "<%=COMM_NUM %>">
 <button type="submit">수정하기</button>
 </form>
 

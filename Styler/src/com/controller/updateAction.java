@@ -26,10 +26,13 @@ public class updateAction extends HttpServlet {
 		MemberDTO info = (MemberDTO)session.getAttribute("id");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int COMM_NUM = 0;
-		if (request.getParameter("COMM_NUM") != null) {
-			COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));}
+		int COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
 		
+		
+		/*
+		 * if (request.getParameter("COMM_NUM") != null) { COMM_NUM =
+		 * Integer.parseInt(request.getParameter("COMM_NUM"));}
+		 */		
 		
 		if (info != null) {
 		String member_ID = info.getId(); 
@@ -45,8 +48,41 @@ public class updateAction extends HttpServlet {
 			script.println("history.back()");
 			script.println("</script>");
 		} 
+
 		
-		if (cnt>0) {
+	
+        int result = dao.update(COMM_NUM, request.getParameter("title"),request.getParameter("content"));
+        if(result == -1) {
+           PrintWriter script = response.getWriter();
+           script.println("<script>");
+           script.println("alert('글 수정에 실패했습니다.')");
+           script.println("history.back()");
+           script.println("</script>");
+        }else {
+        	 PrintWriter script = response.getWriter();
+        	 script.println("<script>");
+             script.println("alert('성공적으로 수정되었습니다.')");
+             script.println("history.back()");
+             script.println("</script>");
+           response.sendRedirect("html5up-strongly-typed/community.jsp");
+           System.out.println("result="+result);
+			/*
+			 * script.println("<script>"); script.println("location.href = 'main'");
+			 * script.println("</script>");
+			 */
+        }
+
+		
+		}
+		
+		
+		
+		
+	}
+}
+		
+		
+		/*if (cnt>0) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='html5up-strongly-typed/community.jsp'");
@@ -70,7 +106,7 @@ public class updateAction extends HttpServlet {
 			script.println("</script>");
 		}
 		System.out.println(title);
-		System.out.println(content);
+		System.out.println(content);*/
 		
 		
 		
@@ -92,6 +128,6 @@ public class updateAction extends HttpServlet {
 //		
 //		} 
 	
-	}
+	
 
-}
+

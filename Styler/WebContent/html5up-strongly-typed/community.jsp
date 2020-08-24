@@ -126,9 +126,11 @@
 <tbody>
 
 	<% 
-		int COMM_NUM = 1;
+		int COMM_NUM = 0;
 		if (request.getParameter("COMM_NUM") != null) {
+			System.out.print("ㅎㅇ");
 			COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
+			
 	} %>
 	
 	
@@ -148,7 +150,8 @@
 		ArrayList<communityDTO> list = dao2.getList(COMM_NUM);
 		MemberDTO info2 = (MemberDTO)session.getAttribute("id");
 		for (int i = 0; i<list.size(); i++) {
-			System.out.print(i);%>
+			System.out.print("게시판에서 확인"+COMM_NUM);
+			%>
 	
 		<tr>
 			<td><%= i+1 %></td>

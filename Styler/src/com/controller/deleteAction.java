@@ -26,10 +26,10 @@ public class deleteAction extends HttpServlet {
 		MemberDTO info = (MemberDTO)session.getAttribute("id");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int COMM_NUM = 0;
-		if (request.getParameter("COMM_NUM") != null) {
-			COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));}
 		
+		
+		int COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
+		System.out.print("글번호"+COMM_NUM);
 		
 		if (info != null) {
 		String member_ID = info.getId(); 
@@ -43,7 +43,7 @@ public class deleteAction extends HttpServlet {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href='html5up-strongly-typed/community.jsp'");
-		script.println("alert('Seccessfully deleted')");
+		script.println("alert('Successfully deleted')");
 		script.println("</script>");
 			System.out.println("연결 성공");
 		} else {

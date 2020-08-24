@@ -118,11 +118,16 @@
 <button id="commumity_list" onclick="location='community.jsp'">목록</button>  
 <% if(info != null && info.getId().equals(list.get(COMM_NUM-87).getMember_ID())){ %>
 <button id="commumity_update" onclick="location='update.jsp?COMM_NUM=<%= COMM_NUM %>'">수정</button>  
-
+<input type="hidden" name="COMM_NUM" value = "<%=COMM_NUM %>">
 <button id="delete" onclick="btn_click();">삭제</button>
 <script>
 function btn_click() {
+	
 	if (confirm("게시글을 삭제하시겠습니까?") == true){
+
+		PrintWriter script = response.getWriter();
+		script.println(
+			"<input type='hidden' name='COMM_NUM' value = '<%=COMM_NUM %>'> "
 		//response.sendRedirect("community.jsp");
 		location.href="../deleteAction";	
 	}else{ 
