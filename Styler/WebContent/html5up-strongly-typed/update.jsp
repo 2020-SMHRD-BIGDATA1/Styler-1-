@@ -61,7 +61,7 @@
 			}
 			communityDAO dao = new communityDAO();
 			ArrayList<communityDTO> list = dao.getList(COMM_NUM);
-			MemberDTO info = (MemberDTO)session.getAttribute("id");
+			MemberDTO info = (MemberDTO)session.getAttribute("info");
 		
 		
 		

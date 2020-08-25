@@ -70,7 +70,7 @@
 
 							<!-- Button -->
 							<% 	
-								MemberDTO info = (MemberDTO)session.getAttribute("id");
+								MemberDTO info = (MemberDTO)session.getAttribute("info");
 								if(info == null){
 								System.out.print("로그인정보 못받아옴");
 							%>
@@ -148,7 +148,7 @@
 	<% 
 		communityDAO dao2 = new communityDAO();
 		ArrayList<communityDTO> list = dao2.getList(COMM_NUM);
-		MemberDTO info2 = (MemberDTO)session.getAttribute("id");
+		MemberDTO info2 = (MemberDTO)session.getAttribute("info");
 		for (int i = 0; i<list.size(); i++) {
 			System.out.print("게시판에서 확인"+COMM_NUM);
 			%>

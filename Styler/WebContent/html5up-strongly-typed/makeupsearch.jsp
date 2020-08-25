@@ -11,24 +11,6 @@
 		<meta charset="euc-kr" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-<<<<<<< HEAD
-		<style>
-			#join {
-			    position: absolute;
-			    top: 3em;
-			    left: 75%;
-			    right: 0%;
-			    cursor: default;
-			}
-			#login {
-			    position: absolute;
-			    top: 3em;
-			    left: 85%;
-			    right: 0%;
-			    cursor: default;
-			}
-		</style>
-=======
 		<link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"/>
 		<style>
 		#main{
@@ -67,7 +49,6 @@
 			}
 		</style>
 
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Styler-1-.git
 	</head>
 		
 	<body class="right-sidebar is-preload">
@@ -80,7 +61,7 @@
 
 						<!-- Button -->
 							<% 	
-								MemberDTO info = (MemberDTO)session.getAttribute("id");
+								MemberDTO info = (MemberDTO)session.getAttribute("info");
 								if(info == null){
 								System.out.print("로그인정보 못받아옴");
 							%>
@@ -97,14 +78,6 @@
 							
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
-<<<<<<< HEAD
-							<p>What is your makeup for today?</p>
-							
-						<!-- Button -->
-							<button id="join" value='join' onclick="location.href='join.jsp'">Join </button>
-                     		<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
-
-=======
 							
 							<p>
 							<% if(info == null){ %>
@@ -114,7 +87,6 @@
 							<%} %>
 							</p> 
 							
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Styler-1-.git
 						<!-- Nav -->
 							<nav id="nav">
 						
@@ -133,6 +105,130 @@
 				<section id="main">
 					<div class="container">
 					<img src="whiteBG.png" width="100%"; height= "280px";>
+					
+		<!-- -------------------------------------------------------------------------------- -->
+					
+					<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+					<form name="search" align="left" style="margin-right:70px;" method = "get"  action ="makeupsearchresult.jsp" onsubmit="return keyword_check()">
+					<td>
+
+ 						 <input type="text" name="keyword"> 
+
+ 					</td>
+
+					<td>
+					
+						<input type="submit" value="search">
+					
+					</td>  
+
+		<!-- -------------------------------------------------------------------------------- -->
+			<!-- <tr>
+						<td>Fare</td>
+						<td><input type = "number" name = "Fare" min = "0" step = "0.01"/></td>
+						<input type = "number" name = "Age"></input>처럼 태그 사이에 아무것도 안들어갈 때 사용
+					</tr> -->
+					<!-- <p width = 300 height = 500>에붸붸붸부벱 난 이곳을 빠져나가겠어</p> -->
+					<div class="row">
+
+							<!-- Content -->
+								<div id="content" class="col-8 col-12-medium">
+
+									<!-- Post -->
+										<article class="box post">
+											<header>
+												<h2><strong>말죽거리잔혹사</strong></h2>
+											</header>
+											
+											<span class="image featured"><iframe width="700" height="500" src="https://www.youtube.com/embed/GEWbwh0Zdmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+											
+										</article>
+
+								</div>
+						
+							<!-- Sidebar -->
+								
+								<div id="sidebar" class="col-4 col-12-medium">
+
+									<!-- Excerpts -->
+									<div></div>
+										<section>
+											<ul class="divided">
+												<li>
+
+													<!-- Excerpt -->
+														<article class="box excerpt">
+															<header>
+																<span class="date">hot 데이트</span>
+																
+															</header>
+															<p>어떤녀석이 나한테 우유를 던졌어.
+															<br>
+															아주 신선한 우유를
+															<br>
+															난 그너셕을 잡고싶다구
+															<br>
+															Ah~ 빨리 나와줬음 좋겠어 친구
+															<br>
+															안그러면 밥을 부셔버릴거야!</p>
+															<h3><a href="#">영상 보러 가기!</a></h3>
+														</article>
+
+												</li>
+											</ul>
+										</section>		
+								</div>
+						</div>
+						<!-- --------------------------------------------------------------------------------------- -->
+						<div class="row">
+
+							<!-- Content -->
+								<div id="content" class="col-8 col-12-medium">
+
+									<!-- Post -->
+										<article class="box post">
+											<header>
+												<h2><strong>해바라기</strong></h2>
+											</header>
+											
+											<span class="image featured"><iframe width="700" height="500" src="https://www.youtube.com/embed/imrUFiYeh50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+											
+										</article>
+
+								</div>
+						
+							<!-- Sidebar -->
+								
+								<div id="sidebar" class="col-4 col-12-medium">
+
+									<!-- Excerpts -->
+									<div></div>
+										<section>
+											<ul class="divided">
+												<li>
+
+													<!-- Excerpt -->
+														<article class="box excerpt">
+															<header>
+																<span class="date">hot 데이트</span>
+																
+															</header>
+															<p>꼭 그렇게
+															<br>
+															다 가져 가야만
+															<br>
+															속이 후련했
+															<br>
+															냐!</p>
+															<h3><a href="#">영상 보러 가기!</a></h3>
+														</article>
+
+												</li>
+											</ul>
+										</section>		
+								</div>
+						</div>
+						<!-- --------------------------------------------------------------------------------------- -->
 						<div class="row">
 
 							<!-- Content -->
@@ -144,77 +240,19 @@
 												<h2>Behold! This is the <strong>right sidebar</strong> layout<br />
 												with a sidebar on the right!</h2>
 											</header>
-											<span class="image featured"><img src="images/pic04.jpg" alt="" /></span>
-											<h3>Right is also not left</h3>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
-											Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
-											vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
-											magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
-											tristique at erat. Curabitur leo nibh, rutrum eu malesuada in, tristique
-											at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
-											tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
-											magna tempus</p>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<h3>Accumsan lorem ipsum veroeros</h3>
-											<p>Consequat Phasellus laoreet massa id in, tristique at erat lorem
-											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna.</p>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique</p>
-											<h3>Ligula suspcipit fusce veroeros</h3>
-											<p>Nullam dolore etiam sed massa id in, tristique at erat lorem
-											ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna.</p>
-											<p>Sed massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan.</p>
+											
+											<span class="image featured"><img width = 300 height = 500 src="images/pic04.jpg" alt="" /></span>
+											
 										</article>
 
 								</div>
-
+						
 							<!-- Sidebar -->
+								
 								<div id="sidebar" class="col-4 col-12-medium">
 
 									<!-- Excerpts -->
+									<div></div>
 										<section>
 											<ul class="divided">
 												<li>
@@ -222,87 +260,17 @@
 													<!-- Excerpt -->
 														<article class="box excerpt">
 															<header>
-																<span class="date">July 30</span>
-																<h3><a href="#">Just another post</a></h3>
+																<span class="date">hot 면접</span>
 															</header>
 															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
 															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<span class="date">July 28</span>
-																<h3><a href="#">And another post</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<span class="date">July 24</span>
-																<h3><a href="#">One more post</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<h3><a href="#">영상 보러 가기!</a></h3>
 														</article>
 
 												</li>
 											</ul>
-										</section>
-
-									<!-- Highlights -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Highlight -->
-														<article class="box highlight">
-															<header>
-																<h3><a href="#">Something of note</a></h3>
-															</header>
-															<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
-															</ul>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Highlight -->
-														<article class="box highlight">
-															<header>
-																<h3><a href="#">Something of less note</a></h3>
-															</header>
-															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
-															</ul>
-														</article>
-
-												</li>
-											</ul>
-										</section>
-
+										</section>		
 								</div>
-
 						</div>
 					</div>
 				</section>

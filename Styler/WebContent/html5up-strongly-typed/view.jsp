@@ -33,7 +33,7 @@
 	
 	<%
    		 String Member_ID =null;
-			MemberDTO info = (MemberDTO)session.getAttribute("id");
+			MemberDTO info = (MemberDTO)session.getAttribute("info");
 			  if(info.getId()!=null){
 				  Member_ID =(String)info.getId();
 			      }
