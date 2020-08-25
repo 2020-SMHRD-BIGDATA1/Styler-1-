@@ -16,7 +16,7 @@ import com.model.communityDAO;
 import com.model.communityDTO;
 
 @WebServlet("/writeAction")
-public class writeAction extends HttpServlet {
+public class CommunityWriteAction extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
@@ -30,7 +30,6 @@ public class writeAction extends HttpServlet {
 		if (info != null) {
 		String member_ID = info.getId(); 
 		communityDTO dto = new communityDTO(title, content, member_ID);
-		
 		communityDAO dao = new communityDAO();
 		int cnt = dao.write(dto);
 		

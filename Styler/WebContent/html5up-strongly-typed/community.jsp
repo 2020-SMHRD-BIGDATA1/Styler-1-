@@ -80,7 +80,7 @@
 							<% }else { %>
 							
 							<button id="myPage" value='myPage' onclick="">My Page</button>
-							<button id="logout" value='logout'>Logout</button>  
+							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>
 							
@@ -126,9 +126,11 @@
 <tbody>
 
 	<% 
-		int pageNumber = 1;
-		if (request.getParameter("pageNumber") != null) {
-		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+		int COMM_NUM = 0;
+		if (request.getParameter("COMM_NUM") != null) {
+			System.out.print("ㅎㅇ");
+			COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
+			
 	} %>
 	
 	
@@ -145,13 +147,15 @@
 	
 	<% 
 		communityDAO dao2 = new communityDAO();
-		ArrayList<communityDTO> list = dao2.getList(pageNumber);
+		ArrayList<communityDTO> list = dao2.getList(COMM_NUM);
 		MemberDTO info2 = (MemberDTO)session.getAttribute("id");
-		for (int i = 0; i<list.size(); i++) { %>
+		for (int i = 0; i<list.size(); i++) {
+			System.out.print("게시판에서 확인"+COMM_NUM);
+			%>
 	
 		<tr>
-			<td><%= list.get(i).getCOMM_NUM() %></td>
-			<td><a class="page" href="view.jsp?Member_ID=<%=list.get(i).getMember_ID() %>"><%= list.get(i).getTitle() %></td>
+			<td><%= i+1 %></td>
+			<td><a class="page" href="view.jsp?COMM_NUM=<%=list.get(i).getCOMM_NUM() %>"><%= list.get(i).getTitle() %></a></td>
 			<td><%= list.get(i).getContent() %></td>
 			<td><%= list.get(i).getMember_ID() %></td>
 			<td>25</td>
@@ -163,11 +167,10 @@
 </tbody>
 </table>
 
-<% if(pageNumber != 1) { %>
-<a class="page" style="padding: 0 0 0 0;" href ="community.jsp?pageNumber=<%=pageNumber-1 %>" class="btn btn-success btn-arrow-left">이전</a>
-<%} else {
-//} if (communityDAO.nextPage(pageNumber+1)) {%>
-<a class="page" style="padding: 0 0 0 0;" href ="community.jsp?pageNumber=<%=pageNumber+1 %>" class="btn btn-success btn-arrow-left">다음</a>
+<% if(COMM_NUM != 1) { %>
+<a class="page" style="padding: 0 0 0 0;" href ="community.jsp?pageNumber=<%=COMM_NUM-1 %>" class="btn btn-success btn-arrow-left">이전</a>
+<% }else {%>
+<a class="page" style="padding: 0 0 0 0;" href ="community.jsp?pageNumber=<%=COMM_NUM+1 %>" class="btn btn-success btn-arrow-left">다음</a>
 <% } %>
 
 <button id="write" type="button" onclick="location.href='communitywrite.jsp'">글쓰기</button>

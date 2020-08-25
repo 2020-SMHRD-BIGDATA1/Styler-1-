@@ -214,7 +214,7 @@
 												
 											<% 	if(list1 != null){%>
 													<% for (int i = 0; i<list1.size(); i++) { %>
-													<p id="product">
+													<p class="product">
 													<table style="border:1px solid black;">
 													<tr>
 														<th>이름: </th>
@@ -249,53 +249,9 @@
 												<% }
 												}%>
 											
-										
-											
-											
-											<p>
-											<table style="border:1px solid black;">
-											<tr>
-											<th> 이름: </th>
-											<td></td>
-											</tr>
-											
-											<tr>
-											<td></td>
-											<td><img src="images/pic02.jpg" alt="" /></td>
-											</tr>
-											
-											
-											<tr>
-											<td> 종류 :  </td>
-											<td> // db에서 부위세부 불러오기 </td>
-											</tr>
-											
-											<tr>
-											<td> 브랜드 : <br> 용량 :  </td>
-											<td> // db에서 불러오기 <br> // db에서 불러오기 </td>
-											</tr>
-											
-											<tr>
-											<td> 색상 : </td>
-											<td> // db에서 불러오기 </td>
-											</tr>
-											
-											<tr>
-											<td> 개봉일 : </td>
-											<td> // db에서 불러오기 </td>
-											</tr>
-											
-											<tr>
-											<td> #키워드 </td>
-											<td></td>
-											</tr>
-											</table>
-											</p>
-											
-											
 											<p id="addbase">
 											
-											<a href="#a" class="open"> 팝업 열기 </a>
+											<a href="#a" class="open"> 화장품 추가하기 </a>
 											
 											</p>
 											
@@ -306,7 +262,7 @@
 												<div class="content">
 												<table class="add1">
 													<caption>
-										
+										베이스 화장품(파운데이션, 비비, 씨씨, 쿠션 등) 새로 사셨어요?
 													</caption>
 													<colgroup>
 													<col style="width: 40px">
@@ -378,7 +334,7 @@
 												
 											<% 	if(list2 != null){%>
 												<% 	for (int i = 0; i<list2.size(); i++) { %>
-													<p id="product">
+													<p class="product">
 													<table style="border:1px solid black;">
 													<tr>
 														<th>이름: </th>
@@ -417,7 +373,7 @@
 										
 											
 											<p id="addeye">
-											<a href="#a" class="open"> 팝업 열기 </a>
+											<a href="#a" class="open"> 화장품 추가하기  </a>
 											
 											</p>
 											
@@ -428,7 +384,7 @@
 												<div class="content">
 												<table class="add1">
 													<caption>
-										
+										눈 화장품(아이섀도우) 새로 사셨어요?
 													</caption>
 													<colgroup>
 													<col style="width: 40px">
@@ -500,7 +456,7 @@
 												
 											<% 	if(list3 != null){%>
 													<% for (int i = 0; i<list3.size(); i++) { %>
-													<p id="product">
+													<p class="product">
 													<table style="border:1px solid black;">
 													<tr>
 														<th>이름: </th>
@@ -537,7 +493,7 @@
 											
 											<p id="addlip">
 											
-											<a href="#a" class="open"> 팝업 열기 </a>
+											<a href="#a" class="open"> 화장품 추가하기  </a>
 											
 											</p>
 											
@@ -661,7 +617,7 @@
 
 								<p id="addcontour">
 
-									<a href="#a" class="open"> 팝업 열기 </a>
+									<a href="#a" class="open"> 화장품 추가하기  </a>
 
 								</p>
 
@@ -671,7 +627,7 @@
 											<h2>contouring 화장품 추가하기</h2>
 											<div class="content">
 												<table class="add1">
-													<caption>d</caption>
+													<caption>컨투어링 화장품(블러셔, 쉐딩, 하이라이터) 새로 사셨어요?</caption>
 													<colgroup>
 														<col style="width: 40px">
 														<col>

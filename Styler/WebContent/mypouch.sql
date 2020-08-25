@@ -42,3 +42,6 @@ INSERT INTO MYPOUCH VALUES ('a', 'art class by rodin shading','16000','toocoolfo
 INSERT INTO MYPOUCH VALUES ('a', 'Prizm air highlighter goldsheer','23000','clio', 'goldsheer','good','powder','perr','contouring','highlighter','2020-06-04','7g','#natural #sliver #party')
 
 SELECT * FROM MYPOUCH;
+
+SELECT * FROM MYPOUCH WHERE ID='a' AND PART='base' ORDER BY PARTTYPE
+SELECT * FROM MYPOUCH WHERE ID='a' AND PART='lip' ORDER BY PARTTYPE;

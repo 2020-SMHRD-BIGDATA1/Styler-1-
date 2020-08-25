@@ -97,7 +97,7 @@ public class CosmeticDAO {
 	
 	public ArrayList<CosmeticDTO> makebaseList (String id){
 		getConnection();
-		String sql = "SELECT * FROM MYPOUCH WHERE ID=?, PART='base' ORDERBY PARTTYPE";
+		String sql = "SELECT * FROM MYPOUCH WHERE ID=? AND PART='base' ORDER BY PARTTYPE";
 		ArrayList<CosmeticDTO> list = new ArrayList<CosmeticDTO>();
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -145,7 +145,7 @@ public class CosmeticDAO {
 	
 	public ArrayList<CosmeticDTO> makeeyeList (String id){
 		getConnection();
-		String sql = "SELECT * FROM MYPOUCH WHERE ID=?, PART='eye' ORDERBY PARTTYPE";
+		String sql = "SELECT * FROM MYPOUCH WHERE ID=? AND PART='eye' ORDER BY PARTTYPE";
 		ArrayList<CosmeticDTO> list = new ArrayList<CosmeticDTO>();
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
@@ -193,7 +193,7 @@ public class CosmeticDAO {
 	
 	public ArrayList<CosmeticDTO> makelipList (String id){
 		getConnection();
-		String sql = "SELECT * FROM MYPOUCH WHERE ID=?, PART='lip' ORDERBY PARTTYPE";
+		String sql = "SELECT * FROM MYPOUCH WHERE ID=? AND PART='lip' ORDER BY PARTTYPE";
 		ArrayList<CosmeticDTO> list = new ArrayList<CosmeticDTO>();
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
@@ -241,7 +241,7 @@ public class CosmeticDAO {
 	
 	public ArrayList<CosmeticDTO> makecontourList (String id){
 		getConnection();
-		String sql = "SELECT * FROM MYPOUCH WHERE ID=?, PART='contouri' ORDERBY PARTTYPE";
+		String sql = "SELECT * FROM MYPOUCH WHERE ID=? AND PART='contouring' ORDER BY PARTTYPE";
 		ArrayList<CosmeticDTO> list = new ArrayList<CosmeticDTO>();
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);

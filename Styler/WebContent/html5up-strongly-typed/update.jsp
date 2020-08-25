@@ -1,8 +1,8 @@
+<%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.communityDTO"%>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.communityDAO"%>
-<%@page import="java.io.PrintWriter"%>
-<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=euc-kr"
     pageEncoding="euc-kr"%>
 <!DOCTYPE html>
@@ -21,44 +21,11 @@
 			    cursor: default;
 			    text-align:center;
 			}
-			
-			#community_list {
-			    position: absolute;
-			    left: 85%;
-			    right: 0%;
-			    cursor: default;
 		</style>
 	</head>
 	<body class="no-sidebar is-preload">
-	
-	<%
-   		 String Member_ID =null;
-			MemberDTO info = (MemberDTO)session.getAttribute("id");
-			  if(info.getId()!=null){
-				  Member_ID =(String)info.getId();
-			      }
-		
-			int COMM_NUM = 0;
-		      if(request.getParameter("COMM_NUM") != null){
-		    	  COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
-		      }
-		      System.out.print("첫번째"+COMM_NUM);
-		      
-		      // 만약 넘어온 데이터가 없다면
-		      if(COMM_NUM == 0){
-		         PrintWriter script = response.getWriter();
-		         script.println("<script>");
-		         script.println("alert('유효하지 않은 글입니다')");
-		         script.println("location.href='community.jsp'");
-		         script.println("</script>");
-		         
-		      }
-		         	communityDAO dao = new communityDAO();
-					ArrayList<communityDTO> list = dao.getList(COMM_NUM);
-
-		%>
 		<div id="page-wrapper">
-		
+
 			<!-- Header -->
 				<section id="header">
 					<div class="container">
@@ -84,57 +51,46 @@
 				<section id="main">
 					<div class="container">
 						<div id="content">
+						
+						
+	<% 
+			int COMM_NUM = 1;
+			if (request.getParameter("COMM_NUM") != null) {
+			COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));	
+			System.out.print("번호"+COMM_NUM);
+			}
+			communityDAO dao = new communityDAO();
+			ArrayList<communityDTO> list = dao.getList(COMM_NUM);
+			MemberDTO info = (MemberDTO)session.getAttribute("id");
+		
+		
+		
+	%>
 
-
+	<%-- ?=COMM_NUM<%= list.get(0).getCOMM_NUM() %> --%>
+<form method="post" action="../updateAction">
 <table class="table table-striped" style="text-align: center; border:1px solid #dddddd">
 <thead>
 <tr>
-	<th colspan="3" style="background-color : #FF7171; text-align : center;">게시판 글 보기</th>
+	<th colspan="2" style="background-color : #FF7171; text-align : center;">게시판 글 수정</th>
 </tr>
 </thead>
 <tbody>
-		<%  System.out.print("두번째"+COMM_NUM); %>
-		<tr>
-		<td style="width: 20%">글 제목</td>
-		<td colspan="2"><%= list.get(COMM_NUM-87).getTitle() %></td>
+	<tr>
+		<td><input type="text" class="form-control" placeholder="제목" name="title" value="<%= list.get(COMM_NUM-87).getTitle() %>" maxlength="50"></td>
 	</tr>
 	<tr>
-		<td>작성자</td>
-		<td colspan="2"><%= list.get(COMM_NUM-87).getMember_ID() %></td>
+		<td><textarea class="form-control" placeholder="내용을 입력하세요" name="content" value="<%= list.get(COMM_NUM-87).getContent()%>" maxlength="2048" style="height: 350px;"></textarea></td>
 	</tr>
-	<tr>
-		<td>작성일자</td>
-		<td colspan="2"><%= list.get(COMM_NUM-87).getCOM_DATE() %></td>
-	</tr>
-	<tr>
-		<td>내용</td>
-		<td colspan="2" style="min-height: 200px; text-align: left;"><%= list.get(COMM_NUM-87).getContent() %></td>
-	</tr>
-	
-		
-	
 </tbody>
 </table>
+<input type="hidden" name="COMM_NUM" value = "<%=COMM_NUM %>">
+<button type="submit">수정하기</button>
+</form>
+
 
 </div>
 </div>					
-		<nav id="nav" style = "
-    position: absolute;
-    top: 1em;
-	left: 55%;
-    cursor: default;
-">
-			<ul>
-				<li><button id="commumity_list" onclick="location='community.jsp'">목록</button></li>
-				<% if(info != null && info.getId().equals(list.get(COMM_NUM-87).getMember_ID())){ %>
-				<li><button id="commumity_update" onclick="location='update.jsp?COMM_NUM=<%= COMM_NUM %>'">수정</button></li>
-				<li><form action="../deleteAction" method="post">
-				<input type="hidden" name="COMM_NUM" value = "<%=COMM_NUM %>">
-				<button id="delete" onclick="location.href='../deleteAction'">삭제</button>
-				</form></li>
-				<% } %>
-			</ul>
-		</nav>
 
 			<!-- Footer -->
 				<section id="footer">
