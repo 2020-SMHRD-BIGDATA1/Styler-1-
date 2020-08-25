@@ -47,6 +47,17 @@
 			    cursor: default;
 			    height: 50px; padding: 0; width: 120px;
 			}
+			
+			.image.featured {
+			    display: block;
+			    width: 82%;
+			    margin: 0 0 3.5em 0;
+					}
+			.row > .col-8 {
+			width: 65%;
+		}
+					
+		
 		</style>
 
 	</head>
@@ -57,7 +68,7 @@
 			<!-- Header -->
 				<section id="header">
 					<div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
-
+				
 
 						<!-- Button -->
 							<% 	
@@ -70,7 +81,7 @@
 							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
 							<% }else { %>
 							
-							<button id="myPage" value='myPage' onclick="location.href='mypage1.jsp'">My Page</button>
+							<button id="myPage" value='myPage' onclick="">My Page</button>
 							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>
@@ -78,7 +89,6 @@
 							
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
-
 							
 							<p>
 							<% if(info == null){ %>
@@ -88,10 +98,6 @@
 							<%} %>
 							</p> 
 							
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Styler-1-.git
 						<!-- Nav -->
 							<nav id="nav">
 						
@@ -110,104 +116,41 @@
 				<section id="main">
 					<div class="container">
 					<img src="whiteBG.png" width="100%"; height= "280px";>
-					
-		<!-- -------------------------------------------------------------------------------- -->
-					
-					<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-					<form name="search" align="left" style="margin-right:70px;" method = "get"  action ="../makeupsearchresult.jsp" onsubmit="return keyword_check()">
-					<td>
-
- 						 <input type="text" name="keyword"> 
-
- 					</td>
-
-					<td>
-					
-						<input type="submit" value="search">
-					
-					</td>  
-
-		<!-- -------------------------------------------------------------------------------- -->
-			<!-- <tr>
-						<td>Fare</td>
-						<td><input type = "number" name = "Fare" min = "0" step = "0.01"/></td>
-						<input type = "number" name = "Age"></input>처럼 태그 사이에 아무것도 안들어갈 때 사용
-					</tr> -->
-					<!-- <p width = 300 height = 500>에붸붸붸부벱 난 이곳을 빠져나가겠어</p> -->
-					<div class="row">
-
-							<!-- Content -->
-								<div id="content" class="col-8 col-12-medium">
-
-									<!-- Post -->
-										<article class="box post">
-											<header>
-												<h2><strong>말죽거리잔혹사</strong></h2>
-											</header>
-											
-											<span class="image featured"><iframe width="700" height="500" src="https://www.youtube.com/embed/GEWbwh0Zdmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
-											
-										</article>
-
-								</div>
-						
-							<!-- Sidebar -->
-								
-								<div id="sidebar" class="col-4 col-12-medium">
-
-									<!-- Excerpts -->
-									<div></div>
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<span class="date">hot 데이트</span>
-																
-															</header>
-															<p>어떤녀석이 나한테 우유를 던졌어.
-															<br>
-															아주 신선한 우유를
-															<br>
-															난 그너셕을 잡고싶다구
-															<br>
-															Ah~ 빨리 나와줬음 좋겠어 친구
-															<br>
-															안그러면 밥을 부셔버릴거야!</p>
-															<h3><a href="makeupdetails.jsp">영상 보러 가기!</a></h3>
-														</article>
-
-												</li>
-											</ul>
-										</section>		
-								</div>
-						</div>
-						<!-- --------------------------------------------------------------------------------------- -->
 						<div class="row">
 
 							<!-- Content -->
 								<div id="content" class="col-8 col-12-medium">
 
 									<!-- Post -->
+									
+                        
 										<article class="box post">
 											<header>
-												<h2><strong>해바라기</strong></h2>
+												<h2>호텔 델루나 장만월 아이유 커버메이크업  <br /> <strong>'Hotel Del Luna' IU Cover Makeup l</strong> <br />
+												이사배(RISABAE Makeup)</h2>
 											</header>
+											<p>
+												<a href="#" class="image featured"><iframe width="600px" height="350px" src="https://www.youtube.com/embed/OFoUKC6mB4Y"></iframe></a>
+											</p>
 											
-											<span class="image featured"><iframe width="700" height="500" src="https://www.youtube.com/embed/imrUFiYeh50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+											<h3>[제품정보]</h3>
+											<p>
 											
+										
+											
+											
+호텔 델루나 장만월 아이유 커버메이크업</br>
+'Hotel Del Luna' IU Cover Makeup l</br>
+이사배(RISABAE Makeup)</br>
+</p>
 										</article>
 
 								</div>
-						
+
 							<!-- Sidebar -->
-								
-								<div id="sidebar" class="col-4 col-12-medium">
+								<div id="sidebar" class="col-4 col-12-medium" style="padding: 42px 0 0 0px;">
 
 									<!-- Excerpts -->
-									<div></div>
 										<section>
 											<ul class="divided">
 												<li>
@@ -215,67 +158,143 @@
 													<!-- Excerpt -->
 														<article class="box excerpt">
 															<header>
-																<span class="date">hot 데이트</span>
-																
+																<span class="date"> </span>
+																<h3><a href="#"></br></br></br></br></br></br>추천 제품</a></h3>
 															</header>
-															<p>꼭 그렇게
-															<br>
-															다 가져 가야만
-															<br>
-															속이 후련했
-															<br>
-															냐!</p>
-															<h3><a href="#">영상 보러 가기!</a></h3>
+															<p>[제품정보]
+
+#프라이머</br>
+-코드</br>
+CODE</br>
+앤 피치블랑 프라이머</br>
+N.Peach Blanc Primer</br>
+[뷰티블렌더 Beauty Blender]</br>
+</br>
+#베이스</br>
+-머지</br>
+MERZY</br>
+더 퍼스트 쿠션 커버 #C01 포슬린</br>
+The First Cushion Cover #C01 Porcelain</br>
+</br>
+-메이크업포에버</br>
+MAKE UP FOR EVER</br>
+UHD 스틱 파운데이션 #Y245</br>
+Ultra HD Stick Foundation  #Y245</br>
+</br>
+#컨실러</br>
+-정샘물</br>
+JUNGSAEMMOOL</br>
+아티스트 컨실러 팔레트 #스킨</br>
+Artist Concealer Palette #Skin</br>
+(화홍 M258 HWAHONG M258)</br>
+</br>
+-꾸셀</br>
+COURCELLES</br>
+컨실러 크레용 #CC700</br>
+Concealer Crayon #CC700</br>
+</br>
+#파우더</br>
+-베카</br>
+BECCA</br>
+하이드라 미스트 세트&리프레쉬 파우더</br>
+Hydra-Mist Set&Refresh Powder</br>
+</br>
+(메이크업포에버 128 MAKE UP FOR EVER 128)</br>
+</br>
+#쉐딩</br>
+-삐아</br>
+BBIA</br>
+라스트 블러쉬 4XL #피넛블로썸</br>
+Last Blush 4XL #Peanut Blossom</br>
+(맥 140S MAC 140s)</br>
+(맥 224S MAC 224s)</br>
+(정샘물 아이섀도우 포인트 JUNGSAEMMOOL Eye Shadow Point</br>
+(수아도르 Soo Ador)</br>
+</br>
+#점</br>
+-머지</br>
+MERZY</br>
+더 퍼스트 이지드로잉 젤 아이라이너 #EG2.체스트넛</br>
+The First Easydrawing Gel Eyeliner #EG2.Chestnut</br>
+</br>
+
+</p>
 														</article>
 
 												</li>
-											</ul>
-										</section>		
-								</div>
-						</div>
-						<!-- --------------------------------------------------------------------------------------- -->
-						<div class="row">
-
-							<!-- Content -->
-								<div id="content" class="col-8 col-12-medium">
-
-									<!-- Post -->
-										<article class="box post">
-											<header>
-												<h2>Behold! This is the <strong>right sidebar</strong> layout<br />
-												with a sidebar on the right!</h2>
-											</header>
-											
-											<span class="image featured"><img width = 300 height = 500 src="images/pic04.jpg" alt="" /></span>
-											
-										</article>
-
-								</div>
-						
-							<!-- Sidebar -->
-								
-								<div id="sidebar" class="col-4 col-12-medium">
-
-									<!-- Excerpts -->
-									<div></div>
-										<section>
-											<ul class="divided">
 												<li>
 
 													<!-- Excerpt -->
 														<article class="box excerpt">
 															<header>
-																<span class="date">hot 면접</span>
+																<span class="date">July 28</span>
+																<h3><a href="#">And another post</a></h3>
 															</header>
 															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
 															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-															<h3><a href="#">영상 보러 가기!</a></h3>
+														</article>
+
+												</li>
+												<li>
+
+													<!-- Excerpt -->
+														<article class="box excerpt">
+															<header>
+																<span class="date">July 24</span>
+																<h3><a href="#">One more post</a></h3>
+															</header>
+															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
 														</article>
 
 												</li>
 											</ul>
-										</section>		
+										</section>
+
+									<!-- Highlights -->
+										<section>
+											<ul class="divided">
+												<li>
+
+													<!-- Highlight -->
+														<article class="box highlight">
+															<header>
+																<h3><a href="#">Something of note</a></h3>
+															</header>
+															<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
+															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+															<ul class="actions">
+																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
+															</ul>
+														</article>
+
+												</li>
+												<li>
+
+													<!-- Highlight -->
+														<article class="box highlight">
+															<header>
+																<h3><a href="#">Something of less note</a></h3>
+															</header>
+															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
+															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+															<ul class="actions">
+																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
+															</ul>
+														</article>
+
+												</li>
+											</ul>
+										</section>
+
 								</div>
+
 						</div>
 					</div>
 				</section>
