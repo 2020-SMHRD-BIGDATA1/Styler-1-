@@ -50,6 +50,10 @@ public class MemberDTO {
 		this.tel = tel;
 	}
 
+	public MemberDTO(String id) {
+		this.id =id;
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -8,24 +8,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MemberDAO {
-	
-	//클래스 바로 아래 field
-	
+
+	// 클래스 바로 아래 field
+
 	private ResultSet rs;
 	private Connection conn;
 	private PreparedStatement psmt;
-	
+
 	private void getConnection() {
-		
+
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
+
 			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String db_id = "hr";
 			String db_pw = "hr";
-			
-			conn = DriverManager.getConnection(db_url,db_id, db_pw);
-			
+
+			conn = DriverManager.getConnection(db_url, db_id, db_pw);
+
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,33 +33,33 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	private void close() {
-		
-		 try {
-             if (rs != null) {
-                rs.close();
-             }
-             if (psmt != null) {
-                psmt.close();
-             }
-             if (conn != null) {
-                conn.close();
-             }
-          } catch (SQLException e) {
-             e.printStackTrace();
-          }
-       }
-		
+
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (psmt != null) {
+				psmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public int join(MemberDTO dto) {
-		
+
 		// 회원가입 DB 처리부분
 		int cnt = 0;
 
 		try {
-			
+
 			getConnection();
 
 			String sql = "INSERT INTO MOTDMEMBER VALUES(?,?,?,?,?,?,?,?,?)";
@@ -74,69 +74,69 @@ public class MemberDAO {
 			psmt.setString(8, dto.getSkintype());
 			psmt.setString(9, dto.getSkinproblem());
 			cnt = psmt.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			
-		}finally { 
-				close();
+
+		} finally {
+			close();
 		}
 		return cnt;
 	}
 
 	public MemberDTO login(MemberDTO dto) {
-		
+
 		MemberDTO info = null;
-		
+
 		// 전역변수, 멤버value, 필드
-		
+
 		try {
-			
+
 			getConnection();
-			
+
 			String sql = "SELECT * FROM MOTDMEMBER WHERE ID = ? AND PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId()); // get.파라미터가 아니라 dto에서 가져오기
 			psmt.setString(2, dto.getPw());
 			rs = psmt.executeQuery();
-			
-			 if (rs.next()) {
-                 System.out.println("로그인 성공");
-                 String name = rs.getString(1);
-     			 String id = rs.getString(2);
-     			 String pw = rs.getString(3);
-     			 String tel = rs.getString(4);
-     			 String birthday = rs.getString(5);
-     			 String sex = rs.getString(6);
-     			 String tone = rs.getString(7);
-     			 String skintype = rs.getString(8);
-     			 String skinproblem = rs.getString(9);
 
-     			 info = new MemberDTO(name, id, pw, tel, birthday, sex, tone, skintype, skinproblem);
-     			 System.out.println("너냐");
-                 System.out.println(info.getName());
-              } else {
-                 System.out.println("로그인 실패");
-              }
-			
-		}  catch (SQLException e) {
+			if (rs.next()) {
+				System.out.println("로그인 성공");
+				String name = rs.getString(1);
+				String id = rs.getString(2);
+				String pw = rs.getString(3);
+				String tel = rs.getString(4);
+				String birthday = rs.getString(5);
+				String sex = rs.getString(6);
+				String tone = rs.getString(7);
+				String skintype = rs.getString(8);
+				String skinproblem = rs.getString(9);
+
+				info = new MemberDTO(name, id, pw, tel, birthday, sex, tone, skintype, skinproblem);
+				System.out.println("너냐");
+				System.out.println(info.getName());
+			} else {
+				System.out.println("로그인 실패");
+			}
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-			
-		 } finally {
-			 close();
-		 }
-            
-          // 로그인 DB 종료 부분
-    return info;
- }	
-	
-	public ArrayList<MemberDTO> getList (int Number){
+
+		} finally {
+			close();
+		}
+
+		// 로그인 DB 종료 부분
+		return info;
+	}
+
+	public ArrayList<MemberDTO> getList(int Number) {
 		getConnection();
 		String sql = "SELECT * FROM MOTDMEMBER";
 		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		try {
 			PreparedStatement pst = conn.prepareStatement(sql);
-			// pst.setInt(1,  comm_dto.getCOMM_NUM() - (pageNumber - 1) * 10);
+			// pst.setInt(1, comm_dto.getCOMM_NUM() - (pageNumber - 1) * 10);
 			rs = pst.executeQuery();
 			while (rs.next()) {
 				MemberDTO mem_dto = new MemberDTO();
@@ -151,7 +151,7 @@ public class MemberDAO {
 				mem_dto.setSkinproblem(rs.getString(9));
 				list.add(mem_dto);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -159,7 +159,109 @@ public class MemberDAO {
 		}
 		return list;
 	}
-	
 
+	public int mypage(MemberDTO dto) {
+		int cnt = 0;
+
+		try {
+			getConnection();
+			String sql = "UPDATE MOTDMEMBER SET NAME = ?, PW = ?, TEL = ?, BIRTHDAY = ?, SEX =?, SKINTONE = ?, SKINTYPE = ?, SKINPROBLEM = ? WHERE ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getPw());
+			psmt.setString(3, dto.getTel());
+			psmt.setString(4, dto.getBirthday());
+			psmt.setString(5, dto.getSex());
+			psmt.setString(6, dto.getTone());
+			psmt.setString(7, dto.getSkintype());
+			psmt.setString(8, dto.getSkinproblem());
+			psmt.setString(9, dto.getId());
+			cnt = psmt.executeUpdate();
+
+			if (cnt != 0) {
+				System.out.println("본인확인 성공");
+			} else {
+				System.out.println("잡았다 요놈");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
+
+	public int identification(MemberDTO dto) {
+		int cnt = 0;
+		try {
+
+			getConnection();
+
+			String sql = "SELECT * FROM MOTDMEMBER WHERE ID = ? AND PW = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getId()); // get.파라미터가 아니라 dto에서 가져오기
+			psmt.setString(2, dto.getPw());
+			cnt = psmt.executeUpdate();
+
+			if (cnt != 0) {
+				System.out.println("본인확인 성공");
+			} else {
+				System.out.println("본인확인 실패");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
+	public MemberDTO mypage1(MemberDTO dto) {
+
+		MemberDTO info = null;
+
+		// 전역변수, 멤버value, 필드
+
+		try {
+
+			getConnection();
+
+			String sql = "SELECT * FROM MOTDMEMBER WHERE ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getId());
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				System.out.println("로그인 성공");
+				String name = rs.getString(1);
+				String id = rs.getString(2);
+				String pw = rs.getString(3);
+				String tel = rs.getString(4);
+				String birthday = rs.getString(5);
+				String sex = rs.getString(6);
+				String tone = rs.getString(7);
+				String skintype = rs.getString(8);
+				String skinproblem = rs.getString(9);
+
+				info = new MemberDTO(name, id, pw, tel, birthday, sex, tone, skintype, skinproblem);
+				System.out.println("패스");
+				System.out.println(info.getName());
+			} else {
+				System.out.println("담기 실패");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			close();
+		}
+
+		// 로그인 DB 종료 부분
+		return info;
+	}
 
 }

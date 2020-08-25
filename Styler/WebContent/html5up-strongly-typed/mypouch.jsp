@@ -62,17 +62,16 @@
 
 
 						<!-- Button -->
-							<% 	
-								MemberDTO info = (MemberDTO)session.getAttribute("id");
-								if(info == null){
-								System.out.print("로그인정보 못받아옴");
+							<% 
+							MemberDTO info = (MemberDTO)session.getAttribute("info");
+							if(info == null){
+							System.out.print("로그인정보 못받아옴");
 							%>
-							
 							<button id="join" value='join' onclick="location.href='join.jsp'" >Join </button>
 							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
 							<% }else { %>
 							
-							<button id="myPage" value='myPage' onclick="">My Page</button>
+							<button id="myPage" value='myPage' onclick="location.href='mypage1.jsp'">My Page</button>
 							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>

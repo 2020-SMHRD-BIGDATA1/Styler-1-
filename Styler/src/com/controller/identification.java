@@ -14,8 +14,8 @@ import javax.servlet.http.HttpSession;
 import com.model.MemberDAO;
 import com.model.MemberDTO;
 
-@WebServlet("/LoginCheckService")
-public class LoginCheckService extends HttpServlet {
+@WebServlet("/identification")
+public class identification extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,13 +31,10 @@ public class LoginCheckService extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO(id, pw);
-		MemberDTO info = dao.login(dto); 
+		int cnt = dao.identification(dto); 
 	
 		
-		if(info !=null){
-			
-			HttpSession session = request.getSession();
-			session.setAttribute("info", info); 
+		if(cnt != 0){
 			
 			response.setCharacterEncoding("EUC-KR");
 			PrintWriter out = response.getWriter();
@@ -47,7 +44,7 @@ public class LoginCheckService extends HttpServlet {
 			out.println("</body>");
 
 			// System.out.println("이름이름이름"+info.getName());
-			response.sendRedirect("/Styler/html5up-strongly-typed/main.jsp");
+			response.sendRedirect("/Styler/html5up-strongly-typed/mypage.jsp");
 
 			//원래페이지로 돌아가게 해주자..
 
@@ -60,7 +57,7 @@ public class LoginCheckService extends HttpServlet {
 
 			out.println("<html>");
 			out.println("<body>");
-			out.println("<script>alert('로그인에 실패하였습니다.');location.href=\"html5up-strongly-typed/login.jsp\";</script>");
+			out.println("<script>alert('로그인에 실패하였습니다.');location.href=\"html5up-strongly-typed/mypage1.jsp\";</script>");
 			out.println("</body>");
 			out.println("</html>");
 
