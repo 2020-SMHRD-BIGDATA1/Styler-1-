@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import= "com.model.MemberDAO" %>
 <%@page import= "com.model.MemberDTO" %>
 
@@ -51,25 +52,22 @@
 				<section id="header">
 					<div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
    					
-
 						<!-- Logo -->
 							<h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
 							<p>What is your makeup for today?</p>
 						
-						<!-- Button -->
 
-						<% 	
+						<% 
 								MemberDTO info = (MemberDTO)session.getAttribute("id");
 								if(info == null){
 								System.out.print("로그인정보 못받아옴");
 							%>
-							
-							<button id="join" value='join' >Join </button>d
+							<button id="join" value='join' onclick="location.href='join.jsp'" >Join </button>
 							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
 							<% }else { %>
 							
 							<button id="myPage" value='myPage' onclick="">My Page</button>
-							<button id="logout" value='logout'>Logout</button>  
+							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>
 
@@ -105,7 +103,7 @@
 									<section>
 										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 										<header>
-											<h3>Okay, so what is this?</h3>
+											<h3>O.kay, so what is this?</h3>
 										</header>
 										<p>This is <strong>Strongly Typed</strong>, a free, fully responsive site template
 										by <a href="http://html5up.net">HTML5 UP</a>. Free for personal and commercial use under the
@@ -145,7 +143,7 @@
 									<li><a href="#" class="button icon solid fa-file">Tell Me More</a></li>
 								</ul>
 							</div>
-						</div>
+						</div>.
 					</div>
 				</section>
 
