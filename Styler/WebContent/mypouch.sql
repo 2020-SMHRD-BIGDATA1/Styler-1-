@@ -17,10 +17,10 @@ CREATE TABLE MYPOUCH(
 	CONSTRAINT PCHFORONE_PK PRIMARY KEY (ID, PCH_NAME)
 )
 
-INSERT INTO MYPOUCH VALUES ('a', 'iamsopretty','1000','etude', 'brown','good','cream','perr','eye','eyeshadow','2020-01-30','25g','#pretty #daily #cheap')
+INSERT INTO MYPOUCH VALUES ('ksmo', 'iamsopretty','1000','etude', 'brown','good','cream','perr','eye','eyeshadow','2020-01-30','25g','#pretty #daily #cheap')
 INSERT INTO MYPOUCH VALUES ('a', 'iamsocute','2000','etude', 'red','good','cream','perr','eye','eyeshadow','2020-01-30','23g','#pretty #daily #cheap')
 INSERT INTO MYPOUCH VALUES ('a', 'springlady','1000','MAC', 'dazzling#23','good','cream','perr','eye','eyeshadow','2020-05-20','15g','#pretty #daily #expensive #remarkable')
-INSERT INTO MYPOUCH VALUES ('a', 'iamsopretty-1','1000','etude', 'brown','good','cream','perr','eye','eyeshadow','2020-01-30','25g','#pretty #daily #cheap');
+INSERT INTO MYPOUCH VALUES ('a', 'iamsopretty-1','1000','etude', 'brown','good','cream','perr','eye','eyeshadow','2020-01-30','25g','#pretty #daily #cheap')
 
 INSERT INTO MYPOUCH VALUES ('a', 'stayallday','105000','bobbybrown', '#21','good','liquid','noperr','base','foundation','2020-03-30','25g','#bright #daily #glosy')
 INSERT INTO MYPOUCH VALUES ('a', 'doublewear-bone','60000','esteelauder', 'bone','good','cream','noperr','base','foundation','2020-03-30','30ml','#bright #oily #matt')
@@ -41,7 +41,7 @@ INSERT INTO MYPOUCH VALUES ('a', 'fruit lip and cheek three different taste','12
 INSERT INTO MYPOUCH VALUES ('a', 'art class by rodin shading','16000','toocoolforschool', 'original','good','powder','noperr','contouring','shading','2020-02-17','9.5g','#reddish #shading #natural')
 INSERT INTO MYPOUCH VALUES ('a', 'Prizm air highlighter goldsheer','23000','clio', 'goldsheer','good','powder','perr','contouring','highlighter','2020-06-04','7g','#natural #sliver #party')
 
-SELECT * FROM MYPOUCH;
+SELECT * FROM MYPOUCH
 
 SELECT * FROM MYPOUCH WHERE ID='a' AND PART='base' ORDER BY PARTTYPE
-SELECT * FROM MYPOUCH WHERE ID='a' AND PART='lip' ORDER BY PARTTYPE;
+SELECT * FROM MYPOUCH WHERE ID='a' AND PART='lip' ORDER BY PARTTYPE

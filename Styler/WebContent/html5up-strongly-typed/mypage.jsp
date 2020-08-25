@@ -101,7 +101,7 @@
 							
 					<!-- Button -->
 							<button id="myPage" onclick="location.href='mypage1.jsp'">myPage </button>
-							<button id="logout">Logout</button>
+							<button id="logout" onclick="location.href='logout.jsp'">Logout</button>
 					</div>
 					</div>
 				</section>

@@ -70,7 +70,7 @@
 
 							<!-- Button -->
 							<% 	
-								MemberDTO info = (MemberDTO)session.getAttribute("id");
+								MemberDTO info = (MemberDTO)session.getAttribute("info");
 								if(info == null){
 								System.out.print("로그인정보 못받아옴");
 							%>

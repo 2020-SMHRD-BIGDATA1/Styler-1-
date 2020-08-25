@@ -63,7 +63,7 @@ public class LoginCheckService extends HttpServlet {
 			out.println("<script>alert('로그인에 실패하였습니다.');location.href=\"html5up-strongly-typed/login.jsp\";</script>");
 			out.println("</body>");
 			out.println("</html>");
-
+			response.sendRedirect("/Styler/html5up-strongly-typed/login.jsp");
 			//response.sendRedirect("Styler/html5up-strongly-typed/login.jsp");
 
 		}	
