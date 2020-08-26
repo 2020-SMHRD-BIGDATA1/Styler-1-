@@ -96,19 +96,19 @@
 		<%  System.out.print("두번째"+COMM_NUM); %>
 		<tr>
 		<td style="width: 20%">글 제목</td>
-		<td colspan="2"><%= list.get(COMM_NUM-87).getTitle() %></td>
+		<td colspan="2"><%= list.get(COMM_NUM-48).getTitle() %></td>
 	</tr>
 	<tr>
 		<td>작성자</td>
-		<td colspan="2"><%= list.get(COMM_NUM-87).getMember_ID() %></td>
+		<td colspan="2"><%= list.get(COMM_NUM-48).getMember_ID() %></td>
 	</tr>
 	<tr>
 		<td>작성일자</td>
-		<td colspan="2"><%= list.get(COMM_NUM-87).getCOM_DATE() %></td>
+		<td colspan="2"><%= list.get(COMM_NUM-48).getCOM_DATE() %></td>
 	</tr>
 	<tr>
 		<td>내용</td>
-		<td colspan="2" style="min-height: 200px; text-align: left;"><%= list.get(COMM_NUM-87).getContent() %></td>
+		<td colspan="2" style="min-height: 200px; text-align: left;"><%= list.get(COMM_NUM-48).getContent() %></td>
 	</tr>
 	
 		
@@ -126,7 +126,7 @@
 ">
 			<ul>
 				<li><button id="commumity_list" onclick="location='community.jsp'">목록</button></li>
-				<% if(info != null && info.getId().equals(list.get(COMM_NUM-87).getMember_ID())){ %>
+				<% if(info != null && info.getId().equals(list.get(COMM_NUM-48).getMember_ID())){ %>
 				<li><button id="commumity_update" onclick="location='update.jsp?COMM_NUM=<%= COMM_NUM %>'">수정</button></li>
 				<li><form action="../deleteAction" method="post">
 				<input type="hidden" name="COMM_NUM" value = "<%=COMM_NUM %>">

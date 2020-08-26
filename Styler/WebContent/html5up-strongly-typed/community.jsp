@@ -79,7 +79,7 @@
 							<button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
 							<% }else { %>
 							
-							<button id="myPage" value='myPage' onclick="">My Page</button>
+							<button id="myPage" value='myPage' onclick="location.href='mypage1.jsp'">My Page</button>
 							<button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
 							
 							<% } %>

@@ -18,7 +18,7 @@ CREATE TABLE MYPOUCH(
 )
 
 INSERT INTO MYPOUCH VALUES ('ksmo', 'iamsopretty','1000','etude', 'brown','good','cream','perr','eye','eyeshadow','2020-01-30','25g','#pretty #daily #cheap')
-INSERT INTO MYPOUCH VALUES ('a', 'iamsocute','2000','etude', 'red','good','cream','perr','eye','eyeshadow','2020-01-30','23g','#pretty #daily #cheap')
+INSERT INTO MYPOUCH VALUES ('zxcvzxcv', 'iamsocute','2000','etude', 'red','good','cream','perr','eye','eyeshadow','2020-01-30','23g','#pretty #daily #cheap')
 INSERT INTO MYPOUCH VALUES ('a', 'springlady','1000','MAC', 'dazzling#23','good','cream','perr','eye','eyeshadow','2020-05-20','15g','#pretty #daily #expensive #remarkable')
 INSERT INTO MYPOUCH VALUES ('a', 'iamsopretty-1','1000','etude', 'brown','good','cream','perr','eye','eyeshadow','2020-01-30','25g','#pretty #daily #cheap')
 
@@ -38,7 +38,7 @@ INSERT INTO MYPOUCH VALUES ('a', 'blush sexappeal','40000','NARS', 'sexappeal','
 INSERT INTO MYPOUCH VALUES ('a', 'cheekpop melonpop','60000','clinique', '08 melonpop','good','powder','perr','contouring','blusher','2020-02-20','3.5g','#pink #coral #girly')
 INSERT INTO MYPOUCH VALUES ('a', 'last blush peanutblossom','6500','Bbia', '08 peanutblossom','good','powder','noperr','contouring','shading','2020-04-30','2.5g','#cooltone #noreddish #natural #daily')
 INSERT INTO MYPOUCH VALUES ('a', 'fruit lip and cheek three different taste','12000','skinfood', '04 fig','good','cream','noperr','contouring','blusher','2020-01-25','7.5g','#warmtone #natural #glosy')
-INSERT INTO MYPOUCH VALUES ('a', 'art class by rodin shading','16000','toocoolforschool', 'original','good','powder','noperr','contouring','shading','2020-02-17','9.5g','#reddish #shading #natural')
+INSERT INTO MYPOUCH VALUES ('a', '아트클래스 바이 로딘 섀딩','16000','toocoolforschool', 'original','good','powder','noperr','contouring','shading','2020-02-17','9.5g','#reddish #shading #natural')
 INSERT INTO MYPOUCH VALUES ('a', 'Prizm air highlighter goldsheer','23000','clio', 'goldsheer','good','powder','perr','contouring','highlighter','2020-06-04','7g','#natural #sliver #party')
 
 SELECT * FROM MYPOUCH

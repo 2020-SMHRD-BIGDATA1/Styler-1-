@@ -23,7 +23,7 @@ public class CommunityUpdateAction extends HttpServlet {
 		response.setCharacterEncoding("euc-kr");
 		
 		HttpSession session = request.getSession();
-		MemberDTO info = (MemberDTO)session.getAttribute("id");
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		int COMM_NUM = Integer.parseInt(request.getParameter("COMM_NUM"));
@@ -40,7 +40,6 @@ public class CommunityUpdateAction extends HttpServlet {
 		communityDAO dao = new communityDAO();
 		int cnt = dao.update(COMM_NUM, title, content);
 		
-		
 		if (request.getParameter("title")==null || request.getParameter("content")==null){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -49,7 +48,6 @@ public class CommunityUpdateAction extends HttpServlet {
 			script.println("</script>");
 		} 
 
-		
 	
         int result = dao.update(COMM_NUM, request.getParameter("title"),request.getParameter("content"));
         if(result == -1) {
@@ -58,7 +56,11 @@ public class CommunityUpdateAction extends HttpServlet {
            script.println("alert('글 수정에 실패했습니다.')");
            script.println("history.back()");
            script.println("</script>");
-        }else {
+           
+           System.out.println("너냐3");
+        }
+        
+        else {
         	 PrintWriter script = response.getWriter();
         	 script.println("<script>");
              script.println("alert('성공적으로 수정되었습니다.')");

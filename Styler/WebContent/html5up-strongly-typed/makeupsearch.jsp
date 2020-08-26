@@ -88,10 +88,7 @@
 							<%} %>
 							</p> 
 							
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/Styler-1-.git
 						<!-- Nav -->
 							<nav id="nav">
 						
@@ -109,7 +106,7 @@
 			<!-- Main -->
 				<section id="main">
 					<div class="container">
-					<img src="whiteBG.png" width="100%"; height= "280px";>
+					<img src="whiteBG.png" width="100%"; height= "240px";>
 					
 		<!-- -------------------------------------------------------------------------------- -->
 					

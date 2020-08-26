@@ -34,18 +34,26 @@ public class Addtopouch extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		System.out.println(id);
-		System.out.println(pw);
+		System.out.println("ㅎㅇ1");
+		
+		if(id != null )
+		{
+
+			System.out.println(id);
+			System.out.println(pw);	
+		}
 		
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDTO info = dao.login(dto); 
 		
-		
+		System.out.println("ㅎㅇ2");
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("info", info); //??? 회원가입할때 받은거 
 		String memberid = info.getId();
+		
+		System.out.println("ㅎㅇ3");
 		
 		CosmeticDTO dto2 = new CosmeticDTO(pch_name, brand, color, part, parttype, opendate);
 		CosmeticDAO dao2 = new CosmeticDAO();

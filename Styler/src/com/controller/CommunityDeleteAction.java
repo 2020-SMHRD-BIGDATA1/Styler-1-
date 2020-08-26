@@ -23,7 +23,7 @@ public class CommunityDeleteAction extends HttpServlet {
 		response.setCharacterEncoding("euc-kr");
 		
 		HttpSession session = request.getSession();
-		MemberDTO info = (MemberDTO)session.getAttribute("id");
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		

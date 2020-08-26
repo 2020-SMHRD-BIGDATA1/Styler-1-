@@ -77,10 +77,10 @@
 </thead>
 <tbody>
 	<tr>
-		<td><input type="text" class="form-control" placeholder="제목" name="title" value="<%= list.get(COMM_NUM-87).getTitle() %>" maxlength="50"></td>
+		<td><input type="text" class="form-control" placeholder="제목" name="title" value="<%= list.get(COMM_NUM-48).getTitle() %>" maxlength="50"></td>
 	</tr>
 	<tr>
-		<td><textarea class="form-control" placeholder="내용을 입력하세요" name="content" value="<%= list.get(COMM_NUM-87).getContent()%>" maxlength="2048" style="height: 350px;"></textarea></td>
+		<td><textarea class="form-control" placeholder="내용을 입력하세요" name="content" value="<%= list.get(COMM_NUM-48).getContent()%>" maxlength="2048" style="height: 350px;"></textarea></td>
 	</tr>
 </tbody>
 </table>
