@@ -159,135 +159,56 @@
 														<article class="box excerpt">
 															<header>
 																<span class="date"> </span>
-																<h3><a href="#"></br></br></br></br></br></br>추천 제품</a></h3>
+																<h3><a href="#"></br></br></br></br></br></br>★추천 제품★</a></h3>
 															</header>
-															<p>[제품정보]
+															
+													<div style="height: 120px; width: 150px; float; display: inline-block">
+													<b>영상 화장품</b> <br>
+													미샤 <br>
+													클리오 <br>
+													</div>
+													
+													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block;">
+													
+													<div style="height:120px; width:150px; float; display: inline-block"> 
+													<b>추천 화장품</b> <br>
+													에뛰드 <br>
+													클리오 <br>
+															</div>
+														<li></li>
 
-#프라이머</br>
--코드</br>
-CODE</br>
-앤 피치블랑 프라이머</br>
-N.Peach Blanc Primer</br>
-[뷰티블렌더 Beauty Blender]</br>
-</br>
-#베이스</br>
--머지</br>
-MERZY</br>
-더 퍼스트 쿠션 커버 #C01 포슬린</br>
-The First Cushion Cover #C01 Porcelain</br>
-</br>
--메이크업포에버</br>
-MAKE UP FOR EVER</br>
-UHD 스틱 파운데이션 #Y245</br>
-Ultra HD Stick Foundation  #Y245</br>
-</br>
-#컨실러</br>
--정샘물</br>
-JUNGSAEMMOOL</br>
-아티스트 컨실러 팔레트 #스킨</br>
-Artist Concealer Palette #Skin</br>
-(화홍 M258 HWAHONG M258)</br>
-</br>
--꾸셀</br>
-COURCELLES</br>
-컨실러 크레용 #CC700</br>
-Concealer Crayon #CC700</br>
-</br>
-#파우더</br>
--베카</br>
-BECCA</br>
-하이드라 미스트 세트&리프레쉬 파우더</br>
-Hydra-Mist Set&Refresh Powder</br>
-</br>
-(메이크업포에버 128 MAKE UP FOR EVER 128)</br>
-</br>
-#쉐딩</br>
--삐아</br>
-BBIA</br>
-라스트 블러쉬 4XL #피넛블로썸</br>
-Last Blush 4XL #Peanut Blossom</br>
-(맥 140S MAC 140s)</br>
-(맥 224S MAC 224s)</br>
-(정샘물 아이섀도우 포인트 JUNGSAEMMOOL Eye Shadow Point</br>
-(수아도르 Soo Ador)</br>
-</br>
-#점</br>
--머지</br>
-MERZY</br>
-더 퍼스트 이지드로잉 젤 아이라이너 #EG2.체스트넛</br>
-The First Easydrawing Gel Eyeliner #EG2.Chestnut</br>
-</br>
+															<div style="height: 120px; width: 150px; float; display: inline-block">
+													<b>내 화장품</b> <br>
+													미샤 <br>
+													클리오 <br>
+													</div>
+													
+													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block">
+													
+													<div style="height:120px; width:150px; float; display: inline-block"> 
+													<b>추천 화장품</b> <br>
+													에뛰드 <br>
+													클리오 <br>
+															</div>
+														<li></li>
+														
+														<div style="height: 120px; width: 150px; float; display: inline-block">
+													<b>내 화장품</b> <br>
+													미샤 <br>
+													클리오 <br>
+													</div>
+													
+													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block">
+													
+													<div style="height:200px; width:120px; float; display: inline-block"> 
+													<b>추천 화장품</b> <br>
+													에뛰드 <br>
+													클리오 <br>
+															</div>
+														<li></li>
 
-</p>
-														</article>
 
-												</li>
-												<li>
 
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<span class="date">July 28</span>
-																<h3><a href="#">And another post</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<span class="date">July 24</span>
-																<h3><a href="#">One more post</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-											</ul>
-										</section>
-
-									<!-- Highlights -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Highlight -->
-														<article class="box highlight">
-															<header>
-																<h3><a href="#">Something of note</a></h3>
-															</header>
-															<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
-															</ul>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Highlight -->
-														<article class="box highlight">
-															<header>
-																<h3><a href="#">Something of less note</a></h3>
-															</header>
-															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
-															</ul>
-														</article>
 
 												</li>
 											</ul>
