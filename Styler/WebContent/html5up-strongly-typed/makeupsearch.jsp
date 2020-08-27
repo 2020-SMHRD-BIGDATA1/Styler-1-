@@ -47,6 +47,9 @@
 			    cursor: default;
 			    height: 50px; padding: 0; width: 120px;
 			}
+			.checkbox{
+				width : 150px;
+			}
 		</style>
 
 	</head>
@@ -108,9 +111,9 @@
 					<div class="container">
 					<img src="whiteBG.png" width="100%"; height= "240px";>
 					
-		<!-- -------------------------------------------------------------------------------- -->
+		<!-- 검색창 -------------------------------------------------------------------------------- -->
 					
-					<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+				<!-- 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 					<form name="search" align="left" style="margin-right:70px;" method = "get"  action ="../makeupsearchresult.jsp" onsubmit="return keyword_check()">
 					<td>
 
@@ -122,15 +125,49 @@
 					
 						<input type="submit" value="search">
 					
-					</td>  
+					</td>   -->
 
-		<!-- -------------------------------------------------------------------------------- -->
-			<!-- <tr>
-						<td>Fare</td>
-						<td><input type = "number" name = "Fare" min = "0" step = "0.01"/></td>
-						<input type = "number" name = "Age"></input>처럼 태그 사이에 아무것도 안들어갈 때 사용
-					</tr> -->
-					<!-- <p width = 300 height = 500>에붸붸붸부벱 난 이곳을 빠져나가겠어</p> -->
+		<!-- 체크박스 -------------------------------------------------------------------------------- -->
+		<div class="row">
+			<form action = "../MakeupSearchInfo" >		
+				<div>
+					<table>
+						<tr>
+							<td>상황</td>
+							<td><input type = "checkbox" name = "situation" value = "면접">면접</td>
+							<td><input type = "checkbox" name = "situation" value = "데일리">데일리</td>
+							<td><input type = "checkbox" name = "situation" value = "왕초보">왕초보</td>
+						</tr>	
+					</table>
+				</div>
+				
+				<div>
+					<table>
+						<tr>
+							<td>피부톤</td>
+							<td><input type = "checkbox" name = "tone" value = "레드브라운">레드브라운</td>
+							<td><input type = "checkbox" name = "tone" value = "데이트">데이트</td>
+							<td><input type = "checkbox" name = "tone" value = "핑크">핑크</td>
+						</tr>		
+					</table>
+				</div>
+				
+				<div>
+					<table>
+						<tr>
+							<td>집에가기</td>
+							<td><input type = "checkbox" name = "homecomming" value = "여름">여름</td>
+							<td><input type = "checkbox" name = "homecomming" value = "파티">파티</td>
+							<td><input type = "checkbox" name = "homecomming" value = "물놀이">물놀이</td>
+						</tr>		
+					</table>
+				</div>
+				<input type = "submit" value = "검색하기">
+				
+			</form>
+		</div>
+<!-- -------------------------------------------------------------------------------- -->
+		<p></p>
 					<div class="row">
 
 							<!-- Content -->
@@ -168,12 +205,12 @@
 															<br>
 															아주 신선한 우유를
 															<br>
-															난 그너셕을 잡고싶다구
+															난 그녀석을 잡고싶다구
 															<br>
 															Ah~ 빨리 나와줬음 좋겠어 친구
 															<br>
 															안그러면 밥을 부셔버릴거야!</p>
-															<h3><a href="makeupdetails.jsp">영상 보러 가기!</a></h3>
+															
 														</article>
 
 												</li>
@@ -181,7 +218,7 @@
 										</section>		
 								</div>
 						</div>
-						<!-- --------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------- -->
 						<div class="row">
 
 							<!-- Content -->
@@ -222,7 +259,7 @@
 															속이 후련했
 															<br>
 															냐!</p>
-															<h3><a href="#">영상 보러 가기!</a></h3>
+													
 														</article>
 
 												</li>
@@ -230,50 +267,8 @@
 										</section>		
 								</div>
 						</div>
-						<!-- --------------------------------------------------------------------------------------- -->
-						<div class="row">
-
-							<!-- Content -->
-								<div id="content" class="col-8 col-12-medium">
-
-									<!-- Post -->
-										<article class="box post">
-											<header>
-												<h2>Behold! This is the <strong>right sidebar</strong> layout<br />
-												with a sidebar on the right!</h2>
-											</header>
-											
-											<span class="image featured"><img width = 300 height = 500 src="images/pic04.jpg" alt="" /></span>
-											
-										</article>
-
-								</div>
-						
-							<!-- Sidebar -->
-								
-								<div id="sidebar" class="col-4 col-12-medium">
-
-									<!-- Excerpts -->
-									<div></div>
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<span class="date">hot 면접</span>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-															<h3><a href="#">영상 보러 가기!</a></h3>
-														</article>
-
-												</li>
-											</ul>
-										</section>		
-								</div>
-						</div>
+<!-- --------------------------------------------------------------------------------------- -->
+					
 					</div>
 				</section>
 
