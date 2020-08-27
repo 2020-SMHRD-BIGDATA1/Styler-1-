@@ -130,6 +130,9 @@
 												이사배(RISABAE Makeup)</h2>
 											</header>
 											<p>
+											<script>
+											src = request.getParameter("src")
+											</script>
 												<a href="#" class="image featured"><iframe width="720px" height="450px" src="https://www.youtube.com/embed/OFoUKC6mB4Y"></iframe></a>
 											</p>
 											
@@ -194,7 +197,7 @@
 													
 													<img src="images/arrow.png" style=" width:60px; height: 60px; padding: 0 20 0 0 ; display: inline-block">
 													
-													<div style="height:120px; width:150px; float; display: inline-block"> 
+													<div style="height:120px; width:200px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													에뛰드<br>
 													클리오<br>
@@ -207,24 +210,24 @@
 													클리오 <br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block">
+													<img src="images/arrow.png" style=" width:70px; height: 70px; padding: 0 20 0 0 ; display: inline-block">
 													
-													<div style="height:200px; width:120px; float; display: inline-block"> 
+													<div style="height:200px; width:200px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													에뛰드 <br>
 													클리오 <br>
 															</div>
 														<li></li>
 
-														<div style="height: 120px; width: 150px; float; display: inline-block">
+														<div style="height: 120px; width: 200px; float; display: inline-block">
 													<b>Contouring</b> <br>
 													미샤 <br>
 													클리오 <br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block">
+													<img src="images/arrow.png" style=" width:70px; height: 70px; padding: 0 20 0 0 ; display: inline-block">
 													
-													<div style="height:200px; width:120px; float; display: inline-block"> 
+													<div style="height:200px; width:200px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													에뛰드 <br>
 													클리오 <br>
