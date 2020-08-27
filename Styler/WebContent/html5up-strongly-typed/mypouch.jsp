@@ -75,6 +75,37 @@
 </script>
 
 <style>
+
+		#join {
+             position: absolute;
+             top: 3em;
+             left: 75%;
+             right: 0%;
+             cursor: default;
+         }
+         #login {
+             position: absolute;
+             top: 3em;
+             left: 85%;
+             right: 0%;
+             cursor: default;
+         }
+         #myPage {
+             position: absolute;
+             top: 3em;
+             left: 75%;
+             right: 0%;
+             cursor: default;
+             height: 50px; padding: 0; width: 120px;
+         }
+         #logout {
+             position: absolute;
+             top: 3em;
+             left: 85%;
+             right: 0%;
+             cursor: default;
+             height: 50px; padding: 0; width: 120px;
+         }
 .modelpop {
    padding: 100px;
    background: #fff;
@@ -350,22 +381,6 @@ table.type1 th {
    'Jeju Gothic';
 }
 
-#join {
-   position: absolute;
-   top: 3em;
-   left: 75%;
-   right: 0%;
-   cursor: default;
-}
-
-#login {
-   position: absolute;
-   top: 3em;
-   left: 85%;
-   right: 0%;
-   cursor: default;
-}
-
 #ppap {
    width: 500px !important;
    position: absolute !important;
@@ -374,44 +389,34 @@ table.type1 th {
 </style>
 
 </head>
-<%
-   MemberDTO info = (MemberDTO) session.getAttribute("info");
-%>
 <body class="right-sidebar is-preload">
 
 
    <!-- Header -->
    <section id="header">
-      <div class="container">
+      <div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
          <!-- Logo -->
          <h1 id="logo">
             <a href="main.jsp">#MOTD</a>
          </h1>
 
          <p>
-            <%
-               if (info == null) {
-            %>
-         
          <h2>What is your makeup for today?</h2>
-         <!-- Button -->
-         <button id="join" value='join' onclick="location.href='join.jsp'">Join
-         </button>
-         <button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>
-         <%
-            } else {
-         %>
-         <h2>
-            Good day~  "<%=info.getName()%>" !!! let's decide your makeup for today. </h2>
-            <button id="myPage" value='myPage' onclick="location.href='mypage1.jsp'">My Page</button>
-                     <button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button> 
-        
-         <%
-            }
-         %>
          </p>
 
-
+ <% 
+                        MemberDTO info = (MemberDTO)session.getAttribute("info");
+                        if(info == null){
+                        System.out.print("로그인정보 못받아옴");
+                     %>
+                     <button id="join" value='join' onclick="location.href='join.jsp'" >Join </button>
+                     <button id="login" value='login' onclick="location.href='login.jsp'">LogIn</button>  
+                     <% }else { %>
+                     
+                     <button id="myPage" value='myPage' onclick="location.href='mypage1.jsp'">My Page</button>
+                     <button id="logout" value='logout' onclick="location.href='logout.jsp'">Logout</button>  
+                        
+                     <% } %>
          
 
 
@@ -431,6 +436,7 @@ table.type1 th {
 
    <section id="main">
       <div class="container">
+       <img src="whiteBG.png" width="100%"; height= "240px";>
          <div class="row">
             <%
                if (info == null) {
@@ -1017,10 +1023,10 @@ table.type1 th {
                </div>
                <div id="ppap" class="col-4 col-12-medium">
 
-                  Excerpts
+                  
                   <section>
                      <ul class="divided">
-                        <li>Excerpt
+                        <li>
                            <article class="base_makeup_box">
                               <header>
                                  <button type="button" class="basebox"
@@ -1053,7 +1059,7 @@ table.type1 th {
                                           })
                            </script>
                         </li>
-                        <li>Excerpt
+                        <li>
                            <article class="eye_makeup_box">
                               <header>
                                  <button type="button" class="eyebox"
@@ -1087,7 +1093,7 @@ table.type1 th {
                            </script>
 
                         </li>
-                        <li>Excerpt
+                        <li>
                            <article class="lip_makeup_box">
                               <header>
                                  <button type="button" class="lipbox"
@@ -1121,12 +1127,12 @@ table.type1 th {
                            </script>
 
                         </li>
-                        <li>Excerpt
+                        <li>
                            <article class="contouring_makeup_box">
                               <header>
                                  <button type="button" class="contouring"
                                     style="margin: 0 0 10px 0";>컨투어링 메이크업 박스</button>
-                                 //이게 버튼이어서 내려 주면 좋겠음. <br>
+                                 <br>
                                  <h3>
                                     <a href="#">가지고 계신 제품들은...</a>
                                  </h3>

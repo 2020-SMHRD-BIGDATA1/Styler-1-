@@ -130,10 +130,10 @@
 												이사배(RISABAE Makeup)</h2>
 											</header>
 											<p>
-												<a href="#" class="image featured"><iframe width="600px" height="350px" src="https://www.youtube.com/embed/OFoUKC6mB4Y"></iframe></a>
+												<a href="#" class="image featured"><iframe width="720px" height="450px" src="https://www.youtube.com/embed/OFoUKC6mB4Y"></iframe></a>
 											</p>
 											
-											<h3>[제품정보]</h3>
+											<h3>[영상 정보]</h3>
 											<p>
 											
 										
@@ -159,41 +159,50 @@
 														<article class="box excerpt">
 															<header>
 																<span class="date"> </span>
-																<h3><a href="#"></br></br></br></br></br></br>★추천 제품★</a></h3>
+																<h3><a href="#"></br></br></br></br>★영상속 제품 확인★</a></h3>
 															</header>
 															
-													<div style="height: 120px; width: 150px; float; display: inline-block">
-													<b>영상 화장품</b> <br>
-													미샤 <br>
-													클리오 <br>
+													<div style="height: 120px; width: 200px; float; display: inline-block">
+													<b>Base</b>
+													<br>
+													-머지(MERZY)<br>
+													더 퍼스트 쿠션 커버 #C01 포슬린<br>
+													<br>
+													-메이크업포에버(MAKE UP FOR EVER)<br>
+													UHD 스틱 파운데이션 #Y245<br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block;">
+													<img src="images/arrow.png" style=" width:70px; height: 70px; padding: 0 20 0 0 ; display: inline-block;">
 													
-													<div style="height:120px; width:150px; float; display: inline-block"> 
+													<div style="height:120px; width:200px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
-													에뛰드 <br>
-													클리오 <br>
+													 <br>
+													 <br>
 															</div>
 														<li></li>
 
-															<div style="height: 120px; width: 150px; float; display: inline-block">
-													<b>내 화장품</b> <br>
-													미샤 <br>
-													클리오 <br>
+															<div style="height: 120px; width: 200px; top:100; float; display: inline-block">
+													<b>Eyes</b>
+													<br>
+											-머지(MERZY)<br>
+											더 퍼스트 이지드로잉 젤 아이라이너 EG2.체스트넛<br>
+											<br>
+											-릴리바이레드(lilybyred)<br>
+											무드 치트킷 02핑크스윗츠<br>
+											(잉글롯 42T INGLOT 42T) <br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block">
+													<img src="images/arrow.png" style=" width:60px; height: 60px; padding: 0 20 0 0 ; display: inline-block">
 													
 													<div style="height:120px; width:150px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
-													에뛰드 <br>
-													클리오 <br>
+													에뛰드<br>
+													클리오<br>
 															</div>
 														<li></li>
 														
-														<div style="height: 120px; width: 150px; float; display: inline-block">
-													<b>내 화장품</b> <br>
+														<div style="height: 120px; width: 200px; float; display: inline-block">
+													<b>Lip</b> <br>
 													미샤 <br>
 													클리오 <br>
 													</div>
@@ -207,7 +216,20 @@
 															</div>
 														<li></li>
 
-
+														<div style="height: 120px; width: 150px; float; display: inline-block">
+													<b>Contouring</b> <br>
+													미샤 <br>
+													클리오 <br>
+													</div>
+													
+													<img src="images/arrow.png" style=" width:80px; height: 80px; padding: 0 20 0 0 ; display: inline-block">
+													
+													<div style="height:200px; width:120px; float; display: inline-block"> 
+													<b>추천 화장품</b> <br>
+													에뛰드 <br>
+													클리오 <br>
+															</div>
+														<li></li>
 
 
 												</li>

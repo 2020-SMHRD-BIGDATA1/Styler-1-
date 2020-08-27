@@ -34,26 +34,22 @@ public class Addtopouch extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		System.out.println("ㅎㅇ1");
-		
 		if(id != null )
 		{
-
 			System.out.println(id);
 			System.out.println(pw);	
 		}
 		
-		MemberDAO dao = new MemberDAO();
-		MemberDTO dto = new MemberDTO(id, pw);
-		MemberDTO info = dao.login(dto); 
-		
-		System.out.println("ㅎㅇ2");
+		/*
+		 * MemberDAO dao = new MemberDAO(); MemberDTO dto = new MemberDTO(id, pw);
+		 * MemberDTO info = dao.login(dto);
+		 * session.setAttribute("info", info); //??? 회원가입할때 받은거 
+		 */
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("info", info); //??? 회원가입할때 받은거 
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		String memberid = info.getId();
-		
-		System.out.println("ㅎㅇ3");
+		System.out.println("memberid" + memberid);
 		
 		CosmeticDTO dto2 = new CosmeticDTO(pch_name, brand, color, part, parttype, opendate);
 		CosmeticDAO dao2 = new CosmeticDAO();
@@ -62,23 +58,32 @@ public class Addtopouch extends HttpServlet {
 		if(cnt4 > 0){ // 0보다 크다는 것은 파우치 등록에 성공했다.
 			
 			response.setCharacterEncoding("EUC-KR");
+			
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
 			out.println("<body>");
-			out.println("<script> alert('파우치에 담겼습니다.');</script>");
+			out.println("<script>");
+			out.println("alert('파우치에 담겼습니다.')");
+			out.println("</script>");
 			out.println("</body>");
+			out.println("</html>");
+			System.out.print("파우치 담기 성공");
 
 		}else{
 			response.setContentType("text/html); charset=euc-kr");
 			response.setCharacterEncoding("EUC-KR");
 
-			PrintWriter out = response.getWriter();
-
-			out.println("<html>");
-			out.println("<body>");
-			out.println("<script>alert('파우치에 담기지 않습니다.');location.href=\"html5up-strongly-typed/mypouch.jsp\";</script>");
-			out.println("</body>");
-			out.println("</html>");
+			PrintWriter script = response.getWriter();
+			script.println("<html>");
+			script.println("<body>");
+       	 	script.println("<script>");
+            script.println("alert('파우치에 담기지 않았습니다.')");
+            script.println("history.back()");
+            script.println("</script>");
+            script.println("</body>");
+			script.println("</html>");
+			response.sendRedirect("html5up-strongly-typed/mypouch.jsp");
+			System.out.print("파우치 담기 실패");
 		}
 		
 		

@@ -10,3 +10,5 @@ CREATE TABLE PRODUCT(
 	ID VARCHAR2(200)
 )
 select * from PRODUCT
+
+

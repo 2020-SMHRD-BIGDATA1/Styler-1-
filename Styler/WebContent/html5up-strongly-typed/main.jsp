@@ -8,6 +8,7 @@
 <html>
    <head>
       <title>Strongly Typed by HTML5 UP</title>
+      <script src = "jquery-3.5.1.min.js"></script>
       <meta charset="EUC-KR" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
@@ -46,15 +47,22 @@
          #page-wrapper {
             font-family :'Jeju Gothic';
          }
+         .nav-up {
+    top: -200px;
+    transition:0.2s;
+}
+	.nav-down {
+	padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;
+	}
       </style>
    </head>
    <body class="homepage is-preload">
       <div id="page-wrapper">
-
+				
          <!-- Header -->
             <section id="header">
-               <div class="container" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
-                  
+               <div class="nav-down" style="padding: 10em 0 8em 0; background-color:white; position:fixed; left:0px; top:0px; width:100%; height:200px; text-align:center; z-index:1000;">
+                  <div class = nav-up></div>
                   <!-- Logo -->
                      <h1 id="logo"><a href="main.jsp">#MOTD</a></h1>
                      <p>What is your makeup for today?</p>
@@ -89,12 +97,80 @@
 
          <!-- Features -->
             <section id="features">
+            <script>
+            
+        	$( document ).ready( function() {
+        		$( window ).scroll( function() {
+        			if ( $( this ).scrollTop() > 10 ) {
+        				$('#header').fadeOut();
+        				$('#nav').fadeOut();
+        			} 
+        			else { 
+        				$('#header').fadeIn(); 
+        				$('#nav').fadeIn();
+        			} 
+        		});
+        	});
+        </script>	
+        	
+        	<script>
+// 코드 시작
+// Hide Header on on scroll down
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('#header').outerHeight();
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    // Make sure they scroll more than delta
+
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+
+    if (st > lastScrollTop && st > navbarHeight){
+
+        // Scroll Down
+
+        $('#header').removeClass('nav-down').addClass('nav-up');
+
+    } else {
+
+        // Scroll Up
+
+        if(st + $(window).height() < $(document).height()) {
+
+            $('#header').removeClass('nav-up').addClass('nav-down');
+
+        }
+
+    }
+
+    lastScrollTop = st;
+
+}
+
+</script>
+
                <div class="container">
                <img src="whiteBG.png" width="100%"; height= "240px";>
                   <header>
                      <h2>매일 똑같은 메이크업 이젠 지겹지 않니? 찾아봐, <strong>너에게 맞는 메이크업 </strong>!</h2>
                      <% if(info == null){ %>
-                              <h2>로그인을 해주세요.^^</h2>
+                              <h2><a href = login.jsp><u>로그인</u></a>을 해주세요.^^</h2>
                      <%}else{  %>
                                <h2><%= info.getName() %> 님 환영합니다.</h2>
                      <%} %>
@@ -106,7 +182,7 @@
                            <section>
                               <a href="#" class="image featured"><img src="images/goldenrosy2.jpg" alt="" /></a>
                               <header>
-                                 <h3> Summer Rose? no, GOLDENROSY!... (autumn daily makeup) </h3>
+                                 <h3 style = "color:#993800"> Summer Rose? no, GOLDENROSY!... (autumn daily makeup) </h3>
                               </header>
                               <p>PONY's new makeup for...<strong>GOLDENROSY</strong><br>
                               분위기 있는 가을 여자의 느낌 
@@ -122,7 +198,7 @@
                            <section>
                               <a href="#" class="image featured"><img src="images/makeup1bright.jpg" alt="" /></a>
                               <header>
-                                 <h3>TOP는 커피이름이다?</h3>
+                                 <h3 style = "color:#993800">TOP는 커피이름이다?</h3>
                               </header>
                               <p>
                               T : time <br>
@@ -141,7 +217,7 @@
                            <section>
                               <a href="#" class="image featured"><img src="images/trendevent.png" alt="" /></a>
                               <header>
-                                 <h3>쉴새없이 바뀌는 뷰티 트랜드! <br> 2020's beauty trend?</h3>
+                                 <h3 style = "color:#993800">쉴새없이 바뀌는 뷰티 트랜드! <br> 2020's beauty trend?</h3>
                               </header>
                               <p>
                               #MOTD와 함께라면 당신은 더이상 팔로워가 아닙니다. 
