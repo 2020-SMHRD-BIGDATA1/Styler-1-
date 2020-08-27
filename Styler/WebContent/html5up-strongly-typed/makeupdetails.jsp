@@ -48,15 +48,23 @@
 			    height: 50px; padding: 0; width: 120px;
 			}
 			
+			.row > .col-8 {
+			width: 54%
+		}
+		.row > .col-4 {
+    width: 45.33333%;
+}
 			.image.featured {
 			    display: block;
-			    width: 82%;
+			    width: 84%;
 			    margin: 0 0 3.5em 0;
 					}
-			.row > .col-8 {
-			width: 65%;
-		}
-					
+					.container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 90em;
+}
+
 		
 		</style>
 
@@ -133,7 +141,7 @@
 											<script>
 											src = request.getParameter("src")
 											</script>
-												<a href="#" class="image featured"><iframe width="720px" height="450px" src="https://www.youtube.com/embed/OFoUKC6mB4Y"></iframe></a>
+												<a href="#" class="image featured"><iframe width="785px" height="490px" src="https://www.youtube.com/embed/OFoUKC6mB4Y"></iframe></a>
 											</p>
 											
 											<h3>[영상 정보]</h3>
@@ -165,7 +173,7 @@
 																<h3><a href="#"></br></br></br></br>★영상속 제품 확인★</a></h3>
 															</header>
 															
-													<div style="height: 120px; width: 200px; float; display: inline-block">
+													<div style="height: 120px; width: 350px; float; display: inline-block">
 													<b>Base</b>
 													<br>
 													-머지(MERZY)<br>
@@ -175,16 +183,16 @@
 													UHD 스틱 파운데이션 #Y245<br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:70px; height: 70px; padding: 0 20 0 0 ; display: inline-block;">
+													<img src="images/arrow.png" style=" margin: 0 20px 0 0; width:70px; height: 70px; display: inline-block;">
 													
-													<div style="height:120px; width:200px; float; display: inline-block"> 
+													<div style="height:120px; width:350px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													 <br>
 													 <br>
 															</div>
 														<li></li>
 
-															<div style="height: 120px; width: 200px; top:100; float; display: inline-block">
+															<div style="height: 120px; width: 350px; top:100; float; display: inline-block">
 													<b>Eyes</b>
 													<br>
 											-머지(MERZY)<br>
@@ -195,39 +203,39 @@
 											(잉글롯 42T INGLOT 42T) <br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:60px; height: 60px; padding: 0 20 0 0 ; display: inline-block">
+													<img src="images/arrow.png" style=" width:70px; height: 70px;margin: 0 20px 0 0; display: inline-block">
 													
-													<div style="height:120px; width:200px; float; display: inline-block"> 
+													<div style="height:120px; width:350px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													에뛰드<br>
 													클리오<br>
 															</div>
 														<li></li>
 														
-														<div style="height: 120px; width: 200px; float; display: inline-block">
+														<div style="height: 120px; width: 350px; float; display: inline-block">
 													<b>Lip</b> <br>
 													미샤 <br>
 													클리오 <br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:70px; height: 70px; padding: 0 20 0 0 ; display: inline-block">
+													<img src="images/arrow.png" style=" width:70px; height: 70px; margin: 0 20px 0 0; display: inline-block">
 													
-													<div style="height:200px; width:200px; float; display: inline-block"> 
+													<div style="height:200px; width:350px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													에뛰드 <br>
 													클리오 <br>
 															</div>
 														<li></li>
 
-														<div style="height: 120px; width: 200px; float; display: inline-block">
+														<div style="height: 120px; width: 350px; float; display: inline-block">
 													<b>Contouring</b> <br>
 													미샤 <br>
 													클리오 <br>
 													</div>
 													
-													<img src="images/arrow.png" style=" width:70px; height: 70px; padding: 0 20 0 0 ; display: inline-block">
+													<img src="images/arrow.png" style=" width:70px; height: 70px; margin: 0 20px 0 0; display: inline-block">
 													
-													<div style="height:200px; width:200px; float; display: inline-block"> 
+													<div style="height:200px; width:350px; float; display: inline-block"> 
 													<b>추천 화장품</b> <br>
 													에뛰드 <br>
 													클리오 <br>
